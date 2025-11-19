@@ -5,6 +5,8 @@
         <main-jumbo-throne></main-jumbo-throne>
         <services-component></services-component>
 
+        <call-out-component></call-out-component>
+
     </guest-layout>
 
 </template>
@@ -14,6 +16,7 @@ import { Head, Link } from '@inertiajs/vue3';
 import GuestLayout from "@/Layouts/GuestLayout.vue";
 import MainJumboThrone from "@/Components/MainJumboThrone.vue";
 import ServicesComponent from "@/Components/ServicesComponent.vue";
+import CallOutComponent from "@/Components/CallOutComponent.vue";
 
 defineProps({
     canLogin: {

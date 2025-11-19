@@ -2,6 +2,7 @@
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import { Link } from '@inertiajs/vue3';
 import {ref} from "vue";
+import FooterComponent from "@/Components/FooterComponent.vue";
 
 const language = ref("EN");
 </script>
@@ -25,6 +26,7 @@ const language = ref("EN");
    <v-main>
        <slot />
 
+       <footer-component></footer-component>
    </v-main>
 
     </v-app>

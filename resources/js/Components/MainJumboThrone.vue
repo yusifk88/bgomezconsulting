@@ -7,12 +7,12 @@
             </h1>
             <p class="text-h1 mt-5 font-weight-black">We make <span style="border-bottom:5px solid cyan ">taxes</span> less taxing</p>
             <p class="text-h5 mt-6">
-                Experts in accounting ready to help<br> your business thrive.
+                Experts in accounting ready to help<br v-if="!$vuetify.display.mobile"> your business thrive.
             </p>
             <p class="mt-10">
-                <v-btn color="cyan" size="x-large" class="text-white">Get Started</v-btn>
+                <v-btn :block="$vuetify.display.mobile" color="cyan" size="x-large" class="text-white mt-4">Get Started</v-btn>
 
-                <v-btn color="cyan" size="x-large" class="ml-3" variant="outlined">Make Appointment</v-btn>
+                <v-btn :block="$vuetify.display.mobile" color="cyan" size="x-large" class="ml-md-3 mt-4" variant="outlined">Make Appointment</v-btn>
             </p>
         </v-col>
         <v-col cols="12" sm="6">

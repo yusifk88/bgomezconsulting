@@ -1,5 +1,5 @@
 <template>
-<v-sheet class="pa-14 bg-cyan-lighten-5">
+<v-sheet class="pa-14 grey-lighten-3">
 
     <h1 class="text-center text-h3 text-primary" >Accounting & tax consulting <br>for you & your business</h1>
     <p class="text-center mt-3">
@@ -173,7 +173,7 @@
                         </v-card-text>
 
                         <v-card-actions>
-                            <v-btn variant="flat" color="cyan" block>Contact Us</v-btn>
+                            <v-btn variant="outlined" color="cyan" block>Contact Us</v-btn>
                         </v-card-actions>
                     </v-card>
                 </v-col>
