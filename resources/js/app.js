@@ -8,8 +8,26 @@ import { createApp, h } from 'vue';
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
-const vuetify = createVuetify()
+const vuetify = createVuetify({
+    components,
+    directives,
+    ssr: true,
+    defaults:{
+        VAppBar:{
+            flat:true
+        },
+        VBtn:{
+            color:"#1C315A",
+            ripple:false,
+            variant:"flat",
+            style: 'text-transform: capitalize; cursor:pointer;',
+            rounded:"lg"
+        }
+    }
+});
 
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 

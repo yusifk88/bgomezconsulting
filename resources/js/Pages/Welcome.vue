@@ -1,12 +1,19 @@
 
 <template>
     <Head title="Welcome" />
-    <v-btn variant="flat" color="red">Hello</v-btn>
+    <guest-layout>
+        <main-jumbo-throne></main-jumbo-throne>
+        <services-component></services-component>
+
+    </guest-layout>
 
 </template>
 
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
+import GuestLayout from "@/Layouts/GuestLayout.vue";
+import MainJumboThrone from "@/Components/MainJumboThrone.vue";
+import ServicesComponent from "@/Components/ServicesComponent.vue";
 
 defineProps({
     canLogin: {
