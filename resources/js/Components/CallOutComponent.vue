@@ -13,6 +13,8 @@
                             class="align-end"
                             gradient="to bottom, rgba(0,0,0,.1), rgba(28, 49, 90, 0.95)"
                             cover src="/img/man-in-orange.jpg">
+                            <aos-vue animation="fade-up">
+
 
                             <v-card-title class="text-white text-h5 text-center text-wrap">
                                 <h2 class="text-md-h2">
@@ -25,12 +27,12 @@
 
                                 <p class="text-center mt-5 mb-5 mb-md-14">
 
-                                    <v-btn color="white" size="x-large" variant="outlined" class="mr-2">Make Appointment</v-btn>
-                                    <v-btn size="x-large" color="cyan" class="text-white ml-2">Get Started <v-icon>mdi-arrow-right</v-icon></v-btn>
+                                    <v-btn :block="$vuetify.display.mobile" color="white" size="x-large" variant="outlined" class="mr-2">Make Appointment</v-btn>
+                                    <v-btn :block="$vuetify.display.mobile" size="x-large" color="cyan" class="text-white ml-md-2 mt-4 mt-md-0">Get Started <v-icon>mdi-arrow-right</v-icon></v-btn>
                                 </p>
 
                             </v-card-text>
-
+                            </aos-vue>
                         </v-img>
 
 

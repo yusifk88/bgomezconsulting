@@ -9,18 +9,18 @@ const language = ref("EN");
 
 <template>
     <v-app>
-        <v-app-bar class="pl-14 pr-14">
+        <v-app-bar class="pl-md-14 pr-md-14">
             <template v-slot:prepend>
-                <v-img width="150" src="/img/logo.svg"></v-img>
+                <application-logo></application-logo>
             </template>
             <template v-slot:append>
-                <v-btn>Home</v-btn>
-                <v-btn>Services</v-btn>
-                <v-btn>Pricing</v-btn>
-                <v-btn>Resources</v-btn>
-                <v-btn>About Us</v-btn>
+                <v-btn href="/" v-if="!$vuetify.display.mobile">Home</v-btn>
+                <v-btn v-if="!$vuetify.display.mobile">Services</v-btn>
+                <v-btn v-if="!$vuetify.display.mobile">Pricing</v-btn>
+                <v-btn v-if="!$vuetify.display.mobile">Resources</v-btn>
+                <v-btn v-if="!$vuetify.display.mobile">About Us</v-btn>
                 <v-btn variant="flat">Login</v-btn>
-                <v-select class="mt-6 ml-1" density="compact" variant="outlined" :items="['EN','SP']" v-model="language"></v-select>
+                <v-select class="mt-6 ml-1" density="compact" variant="outlined" :items="['EN','ES']" v-model="language"></v-select>
             </template>
         </v-app-bar>
    <v-main>

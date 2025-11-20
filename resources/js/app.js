@@ -8,6 +8,8 @@ import { createApp, h } from 'vue';
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
+import AosVue from "aos-vue";
+
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
@@ -45,6 +47,7 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue)
             .use(vuetify)
+            .use(AosVue)
             .mount(el);
     },
     progress: {

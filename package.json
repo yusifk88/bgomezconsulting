@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@fontsource/roboto": "^5.2.8",
-        "@mdi/font": "^7.4.47"
+        "@mdi/font": "^7.4.47",
+        "aos-vue": "^0.0.5"
     }
 }
