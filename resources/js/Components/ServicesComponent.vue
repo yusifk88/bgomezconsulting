@@ -196,7 +196,7 @@
                     <v-card variant="flat" rounded="xl" class="line-card">
                         <v-card-text>
                             <v-avatar rounded="0">
-                                <v-img src="/img/shield.svg"></v-img>
+                                <v-img src="/img/tax2.svg"></v-img>
                             </v-avatar>
                             <p class="font-weight-black text-h6">ITIN Application, Notary Services</p>
                             <p class="text-body-1">

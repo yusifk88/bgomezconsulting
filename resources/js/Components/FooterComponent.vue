@@ -12,7 +12,7 @@
                     services for your businesses to individuals or families tax filing needs our experts in bookkeeping and tax got you covered
                 </p>
 
-                <v-list-item class="bg-list-item" lines="three">
+                <v-list-item class="bg-list-item rounded-lg" lines="three">
                     <template v-slot:prepend>
                         <v-avatar color="#01FFFF" size="80" class="pa-4">
                             <v-img src="/img/tax2.svg"></v-img>
@@ -26,7 +26,7 @@
                     </v-list-item-subtitle>
                 </v-list-item>
 
-                <v-list-item class="bg-list-item" lines="three">
+                <v-list-item class="bg-list-item rounded-lg" lines="three">
                     <template v-slot:prepend>
                         <v-avatar color="#01FFFF" size="80" class="pa-4">
                             <v-img src="/img/globe.svg"></v-img>
@@ -122,10 +122,10 @@
                             <v-list-item class="pl-0">
                                 <v-list-item-title>Home</v-list-item-title>
                             </v-list-item>
-                            <v-list-item class="pl-0">
+                            <v-list-item class="pl-0" :href="route('services')">
                                 <v-list-item-title>Services</v-list-item-title>
                             </v-list-item>
-                            <v-list-item class="pl-0">
+                            <v-list-item class="pl-0" :href="route('pricing')">
                                 <v-list-item-title>Pricing</v-list-item-title>
                             </v-list-item>
                             <v-list-item class="pl-0">

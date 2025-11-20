@@ -8,11 +8,21 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'canRegister' => Route::has('register')
     ]);
 });
+
+Route::get("/services",function (){
+    return Inertia::render("Services");
+})->name("services");
+
+Route::get("/pricing",function (){
+    return Inertia::render("Pricing");
+})->name("pricing");
+
+Route::get("/resources",function (){
+    return Inertia::render("Resources");
+})->name("resources");
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
