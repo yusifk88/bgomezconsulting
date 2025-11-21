@@ -3,21 +3,21 @@
     <guest-layout>
         <v-sheet class="pa-md-14 pa-4 sheet-gradient">
             <h1 class="text-center text-white text-h3">
-                Progressive pricing
+                {{locale().trans.progressive_pricing}}
             </h1>
-            <p class="text-center text-body-1 text-white">We offer a pricing model that scales as the amount of work to ensure that you can get value for your money</p>
+            <p class="text-center text-body-1 text-white"> {{locale().trans.pricing_offer}} </p>
             <v-row class="mt-8">
                 <v-col cols="12" sm="4">
                     <aos-vue animation="fade-up">
 
                     <v-card variant="flat" rounded="xl">
                         <v-card-text>
-                            <p class="font-weight-black text-h6">ITIN Application, Notary Services</p>
-                            <p>IRA W-7 form application creation, analysis and submission</p>
-                            <p class="font-weight-black text-h4 mt-4">Starts At $150.00</p>
-                            <p>Billed per form</p>
+                            <p class="font-weight-black text-h6">{{locale().trans.itin}}</p>
+                            <p>{{locale().trans.ira_form}}</p>
+                            <p class="font-weight-black text-h4 mt-4">{{locale().trans.starts_at}} $150.00</p>
+                            <p>{{locale().trans.billed_per_form}}</p>
 
-                            <v-btn block class="mt-5" size="x-large">Get Started</v-btn>
+                            <v-btn block class="mt-5" size="x-large">{{locale().trans.get_started}}</v-btn>
 
                             <v-list-item class="mt-5">
                                 <template v-slot:prepend>
@@ -77,10 +77,10 @@
                         <v-card-text>
                             <p class="font-weight-black text-h6">Accounting, Bookkeeping & Payroll</p>
                             <p>Income and expense categorization and financial reporting</p>
-                            <p class="font-weight-black text-h4 mt-4">Starts At $550.00</p>
-                            <p>Billed monthly</p>
+                            <p class="font-weight-black text-h4 mt-4">{{locale().trans.starts_at}} $550.00</p>
+                            <p>{{locale().trans.billed_monthly}}</p>
 
-                            <v-btn block class="mt-5" size="x-large">Get Started</v-btn>
+                            <v-btn block class="mt-5" size="x-large">{{locale().trans.get_started}}</v-btn>
 
                             <v-list-item class="mt-5">
                                 <template v-slot:prepend>
@@ -140,10 +140,10 @@
                         <v-card-text>
                             <p class="font-weight-black text-h6">Tax Preparation</p>
                             <p>Analyse, determine and prepare tax for filing</p>
-                            <p class="font-weight-black text-h4 mt-4">Starts At $350</p>
-                            <p>Billed per task</p>
+                            <p class="font-weight-black text-h4 mt-4">{{locale().trans.starts_at}} $350</p>
+                            <p>{{locale().trans.billed_per_task}}</p>
 
-                            <v-btn block class="mt-5" size="x-large">Get Started</v-btn>
+                            <v-btn block class="mt-5" size="x-large">{{locale().trans.get_started}}</v-btn>
 
                             <v-list-item class="mt-5">
                                 <template v-slot:prepend>
@@ -205,9 +205,11 @@
 <script>
 import {Head} from "@inertiajs/vue3";
 import GuestLayout from "@/Layouts/GuestLayout.vue";
+import {locale} from "@/utility.js";
 
 export default {
     name: "Pricing",
+    methods: {locale},
     components: {GuestLayout, Head}
 }
 </script>

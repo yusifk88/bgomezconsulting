@@ -3,7 +3,7 @@
 <v-sheet class="pa-md-14 pa-4 bg-cyan-accent-1">
     <aos-vue animation="fade-up">
 
-    <p class="text-center text-h4 font-weight-black text-primary">Over <span style="border-bottom: 5px solid cyan">500</span> clients trust us <br v-if="!$vuetify.display.mobile"> with their bookkeeping and taxes.</p>
+    <p class="text-center text-h4 font-weight-black text-primary" v-html="locale().trans.record_call_out"></p>
     <p class="text-center"><v-rating model-value="4.8" readonly size="25" color="orange"></v-rating></p>
     </aos-vue>
 
@@ -42,8 +42,11 @@
 </template>
 
 <script>
+import {locale} from "@/utility.js";
+
 export default {
     name: "TestimonialComponent",
+    methods: {locale},
     data(){
         return{
             slide:null,

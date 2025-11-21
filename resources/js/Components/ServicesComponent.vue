@@ -1,9 +1,9 @@
 <template>
 <v-sheet class="pa-md-14 pa-4 bg-grey-lighten-3">
 
-    <h1 class="text-center text-h3 text-primary" >Accounting & tax consulting <br>for you & your business</h1>
-    <p class="text-center mt-3">
-        Whether you are an individual, a business or a family,<br> we offer different tiers of services that you can choose from
+    <h1 class="text-center text-h3 text-primary" v-html="locale().trans.call_to_action" >
+        </h1>
+    <p class="text-center mt-3" v-html="locale().trans.call_to_action_sub">
     </p>
 
     <v-row dense class="mt-8">
@@ -17,9 +17,9 @@
                             <v-avatar rounded="0">
                                 <v-img src="/img/vat.svg"></v-img>
                             </v-avatar>
-                            <p class="font-weight-black text-h6">Tax Preparation</p>
-                            <p class="text-body-1">We have a special team of professionals in tax who are dedicated to making sure your taxes are done right with the precision it deserves.</p>
-                            <v-btn variant="text" class="pl-0">Read More<v-icon>mdi-arrow-right</v-icon></v-btn>
+                            <p class="font-weight-black text-h6">{{locale().trans.tax_preparation}}</p>
+                            <p class="text-body-1">{{locale().trans.tax_preparation_description}}</p>
+                            <v-btn variant="text" class="pl-0">{{locale().trans.read_more}}<v-icon>mdi-arrow-right</v-icon></v-btn>
 
 
                             <!--                            <v-list class="pl-0 ml-0 mt-4">-->
@@ -109,9 +109,9 @@
                             <v-avatar rounded="0">
                                 <v-img src="/img/shield.svg"></v-img>
                             </v-avatar>
-                            <p class="font-weight-black text-h6">Bookkeeping</p>
-                            <p class="text-body-1">Our team of certified accountants with expertise in payroll are dedicated to make sure your books are in order.  </p>
-                            <v-btn variant="text" class="pl-0">Read More<v-icon>mdi-arrow-right</v-icon></v-btn>
+                            <p class="font-weight-black text-h6">{{locale().trans.bookkeeping}}</p>
+                            <p class="text-body-1"> {{locale().trans.bookkeeping_description}} </p>
+                            <v-btn variant="text" class="pl-0">{{locale().trans.read_more}}<v-icon>mdi-arrow-right</v-icon></v-btn>
 
                             <!--                            <v-list class="pl-0 ml-0 mt-4">-->
 
@@ -198,11 +198,11 @@
                             <v-avatar rounded="0">
                                 <v-img src="/img/tax2.svg"></v-img>
                             </v-avatar>
-                            <p class="font-weight-black text-h6">ITIN Application, Notary Services</p>
+                            <p class="font-weight-black text-h6">{{locale().trans.itin}}</p>
                             <p class="text-body-1">
-                                We are experts in ITIN services including application and notary services we ensure your IRS Form W-7 is done right.
+                                {{locale().trans.itin_description}}
                             </p>
-                            <v-btn variant="text" class="pl-0">Read More<v-icon>mdi-arrow-right</v-icon></v-btn>
+                            <v-btn variant="text" class="pl-0">{{locale().trans.read_more}}<v-icon>mdi-arrow-right</v-icon></v-btn>
 
 <!--                            <v-list class="pl-0 ml-0 mt-4">-->
 
@@ -288,8 +288,11 @@
 </template>
 
 <script>
+import {locale} from "@/utility.js";
+
 export default {
-    name: "ServicesComponent"
+    name: "ServicesComponent",
+    methods: {locale}
 }
 </script>
 

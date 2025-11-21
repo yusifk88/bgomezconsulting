@@ -5,8 +5,8 @@
         <v-sheet class="bg-grey-lighten-5 pa-md-14 pa-4">
             <aos-vue animation="fade-up">
 
-            <p class="text-center font-weight-black primary-text text-h3">Useful Resources & Tools</p>
-            <p class="text-center text-body-1">Find useful resources and calculators for financial needs and answers to all your quantions</p>
+            <p class="text-center font-weight-black primary-text text-h3">{{locale().trans.resources_tools}}</p>
+            <p class="text-center text-body-1">{{locale().trans.resources_tools_text}}</p>
 <v-row class="mt-5">
     <v-col cols="12" sm="6" class="mx-auto">
         <v-list>
@@ -35,81 +35,83 @@
 <script>
 import {Head} from "@inertiajs/vue3";
 import GuestLayout from "@/Layouts/GuestLayout.vue";
+import {locale} from "@/utility.js";
 
 export default {
     name: "Resources",
+    methods: {locale},
     components: {GuestLayout, Head},
     data(){
         return{
             items:[
                 {
-                    title:"Inflation Calculator",
+                    title:locale().trans.inflation,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=bud01"
                 }
                 ,
                 {
-                    title:"Cashflow Calculator",
+                    title:locale().trans.cashflow,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=bud10"
                 }
                 ,
                 {
-                    title:"Estate tax liability",
+                    title:locale().trans.estate_tax,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=inc01"
                 }
                 ,
                 {
-                    title:"Should I itemize or take the standard deduction?",
+                    title:locale().trans.itemize_or_standard,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=inc10"
                 }
                 ,
                 {
-                    title:"What is my tax-equivalent yield?",
+                    title:locale().trans.my_tax_equivalent,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=inc11"
                 }
                    ,
                 {
-                    title:"2025 tax refund estimator",
+                    title:locale().trans.tax_refund,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=inc12"
                 }
                     ,
                 {
-                    title:"Tax freedom day",
+                    title:locale().trans.tax_freedom,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=inc13"
                 }
                 ,
                 {
-                    title:"2025 federal income tax calculator",
+                    title:locale().trans.incoms_tax,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=inc02"
                 }
                  ,
                 {
-                    title:"Should I adjust my payroll withholdings?",
+                    title:locale().trans.withholdings,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=inc03"
                 }
                   ,
                 {
-                    title:"Will my investment interest be deductible?",
+                    title:locale().trans.deductible,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=inc04"
                 }
                    ,
                 {
-                    title:"Long-term Capital Gains Tax Estimator",
+                    title:locale().trans.gain_tax,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=inc06"
                 }
 
                 ,
                 {
-                    title:"Compare taxable, tax-deferred and tax-free investment growth",
+                    title:locale().trans.tax_free,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=inc07"
                 }
 
                 ,
                 {
-                    title:"How much of my social security benefit may be taxed?",
+                    title:locale().trans.social_security,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=inc08"
                 }   ,
                 {
-                    title:"What are the tax implications of paying interest?",
+                    title:locale().trans.interest,
                     link:"https://www.yourtaxedge.com/calcloader.php?calc=inc09"
                 }
 

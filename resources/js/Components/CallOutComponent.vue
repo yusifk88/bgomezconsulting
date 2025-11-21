@@ -17,18 +17,19 @@
 
 
                             <v-card-title class="text-white text-h5 text-center text-wrap">
-                                <h2 class="text-md-h2">
-                                    Do your taxes the right way<br v-if="!$vuetify.display.mobile"> with <span style="border-bottom: 5px solid cyan">professional</span> support
+                                <h2 class="text-md-h2" v-html="locale().trans.tax_call_out">
+
                                 </h2>
                             </v-card-title>
                             <v-card-text>
-                                <p class="text-md-h5 text-white pa-md-14 text-center">Your taxes should be done right and we are here make sure you get just that and more with a team of professionals with
-                                    the sole purpose of making sure you and your business can thrive.</p>
+                                <p class="text-md-h5 text-white pa-md-14 text-center">
+                                    {{locale().trans.tax_call_out_description}}
+                                    </p>
 
                                 <p class="text-center mt-5 mb-5 mb-md-14">
 
-                                    <v-btn :block="$vuetify.display.mobile" color="white" size="x-large" variant="outlined" class="mr-2">Make Appointment</v-btn>
-                                    <v-btn :block="$vuetify.display.mobile" size="x-large" color="cyan" class="text-white ml-md-2 mt-4 mt-md-0">Get Started <v-icon>mdi-arrow-right</v-icon></v-btn>
+                                    <v-btn :block="$vuetify.display.mobile" color="white" size="x-large" variant="outlined" class="mr-2">{{locale().trans.make_appointment}}</v-btn>
+                                    <v-btn :block="$vuetify.display.mobile" size="x-large" color="cyan" class="text-white ml-md-2 mt-4 mt-md-0">{{locale().trans.get_started}} <v-icon>mdi-arrow-right</v-icon></v-btn>
                                 </p>
 
                             </v-card-text>
@@ -47,8 +48,11 @@
 </template>
 
 <script>
+import {locale} from "@/utility.js";
+
 export default {
-    name: "CallOutComponent"
+    name: "CallOutComponent",
+    methods: {locale}
 }
 </script>
 
