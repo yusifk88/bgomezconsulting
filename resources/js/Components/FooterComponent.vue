@@ -71,7 +71,7 @@
     <v-sheet class="pa-md-14 pa-4" color="#1C315A">
         <aos-vue animation="fade-up">
 
-        <p class="text-center text-white text-h5">Need Help with tax & bookkeeping?</p>
+        <p class="text-center text-white text-h5">Need Help With Tax & Bookkeeping?</p>
         <p class="text-center mt-5 text-md-h3 text-h5 font-weight-black">
             <v-avatar v-if="!$vuetify.display.mobile" size="70" color="cyan" rounded="xl">
                 <v-icon size="50" color="#1C315A">mdi-phone</v-icon>
@@ -119,7 +119,7 @@
                         <v-col cols="12" sm="3">
                             <h2 class="font-weight-black">Main <span style="border-bottom: 5px solid cyan">Links</span></h2>
 
-                            <v-list-item class="pl-0">
+                            <v-list-item class="pl-0" href="/">
                                 <v-list-item-title>Home</v-list-item-title>
                             </v-list-item>
                             <v-list-item class="pl-0" :href="route('services')">
@@ -128,8 +128,12 @@
                             <v-list-item class="pl-0" :href="route('pricing')">
                                 <v-list-item-title>Pricing</v-list-item-title>
                             </v-list-item>
-                            <v-list-item class="pl-0">
+                            <v-list-item class="pl-0" :href="route('about')">
                                 <v-list-item-title>About Us</v-list-item-title>
+                            </v-list-item>
+
+                            <v-list-item class="pl-0" :href="route('contact')">
+                                <v-list-item-title>Contact Us</v-list-item-title>
                             </v-list-item>
 
                         </v-col>
@@ -221,7 +225,7 @@
         <v-divider></v-divider>
 
         <div>
-            {{ new Date().getFullYear() }} — <strong>Gbomez Consulting</strong>
+            {{ new Date().getFullYear() }} — <strong>BGomez Consulting</strong>
         </div>
     </v-footer>
 </template>

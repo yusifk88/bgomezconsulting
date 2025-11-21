@@ -18,7 +18,8 @@ const language = ref("EN");
                 <v-btn :href="route('services')" v-if="!$vuetify.display.mobile">Services</v-btn>
                 <v-btn v-if="!$vuetify.display.mobile" :href="route('pricing')">Pricing</v-btn>
                 <v-btn v-if="!$vuetify.display.mobile" :href="route('resources')">Resources</v-btn>
-                <v-btn v-if="!$vuetify.display.mobile">About Us</v-btn>
+                <v-btn v-if="!$vuetify.display.mobile" :href="route('about')">About Us</v-btn>
+                <v-btn v-if="!$vuetify.display.mobile" :href="route('contact')">Contact Us</v-btn>
                 <v-btn variant="flat">Login</v-btn>
                 <v-select class="mt-6 ml-1" density="compact" variant="outlined" :items="['EN','ES']" v-model="language"></v-select>
             </template>
