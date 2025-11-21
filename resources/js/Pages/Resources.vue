@@ -3,6 +3,8 @@
     <Head title="Resources"></Head>
     <guest-layout>
         <v-sheet class="bg-grey-lighten-5 pa-md-14 pa-4">
+            <aos-vue animation="fade-up">
+
             <p class="text-center font-weight-black primary-text text-h3">Useful Resources & Tools</p>
             <p class="text-center text-body-1">Find useful resources and calculators for financial needs and answers to all your quantions</p>
 <v-row class="mt-5">
@@ -22,6 +24,7 @@
         </v-list>
     </v-col>
 </v-row>
+            </aos-vue>
 
         </v-sheet>
 
