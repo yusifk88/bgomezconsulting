@@ -1,11 +1,13 @@
 <script setup>
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import { Link } from '@inertiajs/vue3';
-import {ref} from "vue";
+import {Link} from '@inertiajs/vue3';
+import {onMounted, ref} from "vue";
 import FooterComponent from "@/Components/FooterComponent.vue";
 import {locale} from "@/utility.js";
 
-const language = ref("EN");
+const language = ref(locale().local);
+
+
 </script>
 
 <template>
@@ -15,21 +17,33 @@ const language = ref("EN");
                 <application-logo></application-logo>
             </template>
             <template v-slot:append>
-                <v-btn href="/" v-if="!$vuetify.display.mobile">{{locale().trans.home}}</v-btn>
-                <v-btn :href="route('services')" v-if="!$vuetify.display.mobile">{{locale().trans.services}}</v-btn>
-                <v-btn v-if="!$vuetify.display.mobile" :href="route('pricing')">{{locale().trans.pricing}}</v-btn>
-                <v-btn v-if="!$vuetify.display.mobile" :href="route('resources')">{{locale().trans.resources}}</v-btn>
-                <v-btn v-if="!$vuetify.display.mobile" :href="route('about')">{{locale().trans.about_us}}</v-btn>
-                <v-btn v-if="!$vuetify.display.mobile" :href="route('contact')">{{locale().trans.contact_us}}</v-btn>
-                <v-btn variant="flat">{{locale().trans.login}}</v-btn>
-                <v-select class="mt-6 ml-1" density="compact" variant="outlined" :items="['EN','ES']" v-model="language"></v-select>
+                <v-btn href="/" v-if="!$vuetify.display.mobile">{{ locale().trans.home }}</v-btn>
+                <v-btn :href="route('services')" v-if="!$vuetify.display.mobile">{{ locale().trans.services }}</v-btn>
+                <v-btn v-if="!$vuetify.display.mobile" :href="route('pricing')">{{ locale().trans.pricing }}</v-btn>
+                <v-btn v-if="!$vuetify.display.mobile" :href="route('resources')">{{ locale().trans.resources }}</v-btn>
+                <v-btn v-if="!$vuetify.display.mobile" :href="route('about')">{{ locale().trans.about_us }}</v-btn>
+                <v-btn v-if="!$vuetify.display.mobile" :href="route('contact')">{{ locale().trans.contact_us }}</v-btn>
+                <v-btn variant="flat">{{ locale().trans.login }}</v-btn>
+                <v-select
+                    class="mt-6 ml-1"
+                    density="compact"
+                    variant="outlined"
+                    :items="['en','es']"
+                    v-model="language">
+                    <template v-slot:item="{props,item}">
+                        <v-list-item v-bind="props" :href="route('changeLanguage',item.title)">
+                            <v-list-item-title>
+                            </v-list-item-title>
+                        </v-list-item>
+                    </template>
+                </v-select>
             </template>
         </v-app-bar>
-   <v-main>
-       <slot />
+        <v-main>
+            <slot/>
 
-       <footer-component></footer-component>
-   </v-main>
+            <footer-component></footer-component>
+        </v-main>
 
     </v-app>
 </template>

@@ -22,8 +22,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Vite::prefetch(concurrency: 3);
+
         Inertia::share([
-            'locale' => fn() => app()->getLocale(),
+            'locale' => fn() => session()->get("lang",app()->getLocale()),
             'translations' => fn() => __('app')
         ]);
     }

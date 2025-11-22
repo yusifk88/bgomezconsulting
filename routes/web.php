@@ -5,12 +5,24 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register')
     ]);
 });
+
+
+Route::get("/home/{lng}",function ($lng){
+    $langList = ['es','en'];
+    if (in_array($lng, $langList)) {
+        session()->put(['lang' => $lng]);
+    }
+    return redirect()->back();
+
+})->name("changeLanguage");
+
 
 Route::get("/services",function (){
     return Inertia::render("Services");
@@ -43,5 +55,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
 
 require __DIR__.'/auth.php';

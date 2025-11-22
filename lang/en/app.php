@@ -55,7 +55,7 @@ return [
     "progressive_pricing" => "Progressive pricing",
     "pricing_offer" => "We offer a pricing model that scales as the amount of work to ensure that you can get value for your money",
     "ira_form"=>"IRA W-7 form application creation, analysis and submission",
-    "starts_at"=>"Start At",
+    "starts_at"=>"Starts At",
     "billed_per_form"=>"Billed per Form",
     "billed_monthly"=>"Billed Monthly",
     "billed_per_task"=>"Billed per task",
