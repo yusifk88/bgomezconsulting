@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@fontsource/roboto": "^5.2.8",
+        "@growthbunker/vueflags": "^0.1.14",
         "@mdi/font": "^7.4.47",
         "aos-vue": "^0.0.5",
         "vue-i18n": "^11.1.12"

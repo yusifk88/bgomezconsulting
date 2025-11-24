@@ -3,6 +3,23 @@ return [
     "consulting_services" => "Consulting Services",
     "tagline" => "Experts in accounting ready to help your business thrive.",
     "get_started" => "Get Started",
+
+
+    "get_started_with_your_texes"=>"Register to get started with your texes",
+    "name"=>"Name",
+    "password"=>"Password",
+    "confirm"=>"Confirm",
+    "email"=>"Email",
+    "register"=>"Register",
+    "already_registered"=>"Already registered",
+    "tax_with_us"=>"Do your taxes with us <br> wherever you are",
+    "create_account"=>"Create a secure account with us to continue with your tax filing processes",
+
+    "login_account"=>"Log into your account",
+    "remember_me"=>"Remember me",
+    "manage_records"=>"Continue to your dashboard to manage records",
+    "continue_to_dashboard"=>"Continue to your dashboard<br> to manage records",
+
     "home" => "Home",
     "services" => "Services",
     "pricing" => "Pricing",

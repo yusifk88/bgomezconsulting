@@ -25,6 +25,7 @@ const submit = () => {
     <GuestLayout>
         <Head title="Forgot Password" />
 
+        <v-sheet class="pa-md-14 bg-grey-lighten-5">
         <div class="mb-4 text-sm text-gray-600">
             Forgot your password? No problem. Just let us know your email
             address and we will email you a password reset link that will allow
@@ -64,5 +65,7 @@ const submit = () => {
                 </PrimaryButton>
             </div>
         </form>
+        </v-sheet>
+
     </GuestLayout>
 </template>

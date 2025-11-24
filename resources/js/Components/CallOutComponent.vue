@@ -17,8 +17,7 @@
 
 
                             <v-card-title class="text-white text-h5 text-center text-wrap">
-                                <h2 class="text-md-h2" v-html="locale().trans.tax_call_out">
-
+                                <h2 class="text-md-h2 font-weight-black"  v-html="locale().trans.tax_call_out">
                                 </h2>
                             </v-card-title>
                             <v-card-text>

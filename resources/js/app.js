@@ -7,6 +7,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, h } from 'vue';
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
+
 import { createVuetify } from 'vuetify'
 import AosVue from "aos-vue";
 

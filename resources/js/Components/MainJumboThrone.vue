@@ -16,9 +16,18 @@
             </p>
             </aos-vue>
             <p class="mt-10">
-                <v-btn :block="$vuetify.display.mobile" color="cyan" size="x-large" class="text-white mt-4">{{t.trans.get_started}}</v-btn>
+                <v-btn :block="$vuetify.display.mobile"
+                       color="cyan"
+                       size="x-large"
+                       class="text-white mt-4"
+                       :href="route('register')"
+                >{{t.trans.get_started}}</v-btn>
 
-                <v-btn :block="$vuetify.display.mobile" color="cyan" size="x-large" class="ml-md-3 mt-4" variant="outlined">{{t.trans.make_appointment}}</v-btn>
+                <v-btn :block="$vuetify.display.mobile"
+                       color="cyan"
+                       size="x-large"
+                       class="ml-md-3 mt-4"
+                       variant="outlined">{{t.trans.make_appointment}}</v-btn>
             </p>
         </v-col>
         <v-col cols="12" sm="6">

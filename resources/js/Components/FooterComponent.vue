@@ -139,7 +139,7 @@
                         <v-col cols="12" sm="5">
                             <h2 class="font-weight-black">{{locale().trans.resources}} </h2>
 
-                            <v-list-item class="pl-0">
+                            <v-list-item class="pl-0" :href="route('login')">
                                 <v-list-item-title>{{locale().trans.login}}</v-list-item-title>
                             </v-list-item>
                             <v-list-item class="pl-0 rounded-xl" href="https://www.yourtaxedge.com/calcloader.php?calc=bud01"
@@ -223,6 +223,11 @@
         <v-divider></v-divider>
 
         <div>
+            <p class="text-center">
+                <a :href="route('changeLanguage','en')">English</a>
+                <a class="ml-3" :href="route('changeLanguage','es')">Espanol</a>
+
+            </p>
             {{ new Date().getFullYear() }} — <strong>BGomez Consulting</strong>
         </div>
     </v-footer>
