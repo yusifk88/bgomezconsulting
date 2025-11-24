@@ -34,7 +34,7 @@ const submit = () => {
     <GuestLayout>
         <Head title="Log in" />
 
-        <v-sheet class="bg-grey-lighten-5 pa-md-14 pa-4">
+        <v-sheet class="bg-grey-lighten-5 pa-md-16 pa-4">
             <v-row>
                 <v-col cols="12" sm="4">
 

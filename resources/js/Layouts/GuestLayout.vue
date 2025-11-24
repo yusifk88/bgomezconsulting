@@ -4,6 +4,7 @@ import {Head, Link} from '@inertiajs/vue3';
 import {onMounted, ref} from "vue";
 import FooterComponent from "@/Components/FooterComponent.vue";
 import {locale} from "@/utility.js";
+import NavLink from "@/Components/NavLink.vue";
 const language = ref(locale().local);
 
 </script>
@@ -27,12 +28,12 @@ const language = ref(locale().local);
             </template>
             <template v-slot:append>
                 <v-btn href="/" v-if="!$vuetify.display.mobile">{{ locale().trans.home }}</v-btn>
-                <v-btn :href="route('services')" v-if="!$vuetify.display.mobile">{{ locale().trans.services }}</v-btn>
-                <v-btn v-if="!$vuetify.display.mobile" :href="route('pricing')">{{ locale().trans.pricing }}</v-btn>
-                <v-btn v-if="!$vuetify.display.mobile" :href="route('resources')">{{ locale().trans.resources }}</v-btn>
-                <v-btn v-if="!$vuetify.display.mobile" :href="route('about')">{{ locale().trans.about_us }}</v-btn>
-                <v-btn v-if="!$vuetify.display.mobile" :href="route('contact')">{{ locale().trans.contact_us }}</v-btn>
-                <v-btn variant="flat" :href="route('login')">{{ locale().trans.login }}</v-btn>
+                <v-btn active-color="cyan" :active="route().current('services')" :href="route('services')" v-if="!$vuetify.display.mobile">{{ locale().trans.services }}</v-btn>
+                <v-btn active-color="cyan"  :active="route().current('pricing')" v-if="!$vuetify.display.mobile" :href="route('pricing')">{{ locale().trans.pricing }}</v-btn>
+                <v-btn active-color="cyan"  :active="route().current('resources')" v-if="!$vuetify.display.mobile" :href="route('resources')">{{ locale().trans.resources }}</v-btn>
+                <v-btn active-color="cyan"  :active="route().current('about')" v-if="!$vuetify.display.mobile" :href="route('about')">{{ locale().trans.about_us }}</v-btn>
+                <v-btn active-color="cyan"  :active="route().current('contact')" v-if="!$vuetify.display.mobile" :href="route('contact')">{{ locale().trans.contact_us }}</v-btn>
+                <v-btn active-color="cyan"  :active="route().current('login')" variant="flat" :href="route('login')">{{ locale().trans.login }}</v-btn>
                 <v-select
                     class="mt-6 ml-1"
                     density="compact"

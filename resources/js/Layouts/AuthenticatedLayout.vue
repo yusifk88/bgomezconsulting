@@ -11,20 +11,21 @@ const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
+    <v-app>
     <div>
         <div class="min-h-screen bg-gray-100">
             <nav
-                class="border-b border-gray-100 bg-white"
+                class="border-b border-gray-100 text-white" style="background-color: #1C315A"
             >
                 <!-- Primary Navigation Menu -->
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div class="flex h-16 justify-between">
                         <div class="flex">
                             <!-- Logo -->
-                            <div class="flex shrink-0 items-center">
-                                <Link :href="route('dashboard')">
+                            <div class="flex shrink-0 items-center" >
+                                <Link :href="route('dashboard')" style="background-color: white" class="rounded-xl text-decoration-none">
                                     <ApplicationLogo
-                                        class="block h-9 w-auto fill-current text-gray-800"
+                                        class="block h-9 w-auto fill-current text-white"
                                     />
                                 </Link>
                             </div>
@@ -34,11 +35,33 @@ const showingNavigationDropdown = ref(false);
                                 class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
                             >
                                 <NavLink
+                                    class="text-white"
                                     :href="route('dashboard')"
                                     :active="route().current('dashboard')"
                                 >
                                     Dashboard
+
                                 </NavLink>
+
+                                <NavLink
+                                    class="text-white"
+                                    :href="route('dashboard')"
+                                    :active="route().current('dashboard')"
+                                >
+                                    Submissions
+
+                                </NavLink>
+
+                                <NavLink
+                                    class="text-white"
+                                    :href="route('dashboard')"
+                                    :active="route().current('dashboard')"
+                                >
+                                    Updates
+
+                                </NavLink>
+
+
                             </div>
                         </div>
 
@@ -154,23 +177,26 @@ const showingNavigationDropdown = ref(false);
                     >
                         <div class="px-4">
                             <div
-                                class="text-base font-medium text-gray-800"
+                                class="text-base font-medium text-gray"
                             >
                                 {{ $page.props.auth.user.name }}
                             </div>
-                            <div class="text-sm font-medium text-gray-500">
+                            <div class="text-sm font-medium text-gray">
                                 {{ $page.props.auth.user.email }}
                             </div>
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <ResponsiveNavLink :href="route('profile.edit')">
+                            <ResponsiveNavLink
+                                class="text-white"
+                                :href="route('profile.edit')">
                                 Profile
                             </ResponsiveNavLink>
                             <ResponsiveNavLink
                                 :href="route('logout')"
                                 method="post"
                                 as="button"
+                                class="text-red"
                             >
                                 Log Out
                             </ResponsiveNavLink>
@@ -179,20 +205,46 @@ const showingNavigationDropdown = ref(false);
                 </div>
             </nav>
 
-            <!-- Page Heading -->
-            <header
-                class="bg-white shadow"
-                v-if="$slots.header"
-            >
-                <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                    <slot name="header" />
-                </div>
-            </header>
 
             <!-- Page Content -->
             <main>
                 <slot />
             </main>
+
         </div>
     </div>
+
+    <v-bottom-navigation
+        elevation="0"
+        v-if="$vuetify.display.mobile"
+        color="#1C315A"
+    >
+        <v-btn
+            color="#1C315A"
+            :ripple="false"
+            :href="route('dashboard')"
+            :active="route().current('dashboard')"
+        >
+            <v-icon>mdi-home-outline</v-icon>
+            <span>Dashboard</span>
+        </v-btn>
+
+        <v-btn
+            :ripple="false"
+        >
+            <v-icon>mdi-upload-outline</v-icon>
+            <span>Submissions</span>
+        </v-btn>
+
+        <v-btn
+            color="#1C315A"
+            :ripple="false"
+            :href="route('profile.edit')"
+        >
+            <v-icon>mdi-account-outline</v-icon>
+
+            <span>Profile</span>
+        </v-btn>
+    </v-bottom-navigation>
+    </v-app>
 </template>
