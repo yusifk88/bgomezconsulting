@@ -1,20 +1,26 @@
 <template>
 
 
-    <div class="py-12">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div :class="{'py-12':onboard}">
+
             <div
-                class="overflow-hidden bg-white shadow-sm sm:rounded-lg"
+                class="overflow-hidden bg-white sm:rounded-lg p-4 shadow sm:p-8"
             >
-                <v-row>
-                    <v-col cols="12" sm="6" class="mx-auto">
-                        <h1 class="text-h4 font-weight-black mt-5 text-center">Hello {{$page.props.auth.user.name}}</h1>
-                        <p class="text-center text-h5 mt-2">Complete your profile to continue</p>
-                        <p class="text-center mt-2">Set up your profile to make it easier to understand your tax needs, this
+                <v-row dense>
+                    <v-col cols="12" sm="6" :class="{'mx-auto':onboard}">
+                       <aos-vue animation="fade-up">
+
+                        <h1 class="text-h4 font-weight-black mt-5 text-center" v-if="onboard">Hello {{$page.props.auth.user.name}}</h1>
+                        <p class="text-center text-h5 mt-2" v-if="onboard">Complete your profile to continue</p>
+                        <p class="text-center mt-2" v-if="onboard">Set up your profile to make it easier to understand your tax needs, this
                             include information about you and household.</p>
-                        <v-card variant="flat">
-                            <v-card-text>
-                                <form>
+                           <h2 v-if="!onboard" class="text-lg font-medium text-gray-900 mt-4">
+                               Update Bio & household information
+                           </h2>
+                       </aos-vue>
+
+
+                                <form @submit.prevent="account.post(route('account.store'))">
 
                                     <div>
                                         <InputLabel for="name" value="Name"/>
@@ -24,7 +30,7 @@
                                             class="mt-1 block w-full"
                                             v-model="account.name"
                                             required
-                                            autofocus
+                                            :autofocus="onboard"
                                             autocomplete="name"
                                         />
 
@@ -101,17 +107,22 @@
                                             :items="states"
                                             color="blue"
                                             item-color="blue"
+                                            v-model="account.state"
                                         ></v-autocomplete>
 
                                         <InputError class="mt-2" :message="account.errors.state"/>
                                     </div>
 
                                     <div>
+                                        <v-row dense>
+                                            <v-col cols="12" sm="5">
+
+
                                         <InputLabel for="city" value="City"/>
                                         <TextInput
                                             id="city"
                                             type="text"
-                                            class="mt-1 block w-full"
+                                            class="mt-1 w-full"
                                             v-model="account.city"
                                             required
 
@@ -119,20 +130,34 @@
                                         />
 
                                         <InputError class="mt-2" :message="account.errors.city"/>
-                                    </div>
+                                            </v-col>
+                                            <v-col cols="12" sm="5">
+                                                <InputLabel for="street" value="Street"/>
+                                                <TextInput
+                                                    id="street"
+                                                    type="text"
+                                                    class="mt-1 w-full"
+                                                    v-model="account.street"
+                                                    required
+                                                    autocomplete="street"
+                                                />
 
-                                    <div class="mt-3">
-                                        <InputLabel for="street" value="Street"/>
-                                        <TextInput
-                                            id="street"
-                                            type="text"
-                                            class="mt-1 block w-full"
-                                            v-model="account.street"
-                                            required
-                                            autocomplete="street"
-                                        />
+                                                <InputError class="mt-2" :message="account.errors.street"/>
+                                            </v-col>
+                                            <v-col cols="12" sm="2">
+                                                <InputLabel for="zip" value="Zip"/>
+                                                <TextInput
+                                                    id="zip"
+                                                    type="text"
+                                                    class="mt-1 w-full"
+                                                    v-model="account.zip"
+                                                    required
+                                                    autocomplete="zip"
+                                                />
 
-                                        <InputError class="mt-2" :message="account.errors.street"/>
+                                                <InputError class="mt-2" :message="account.errors.zip"/>
+                                            </v-col>
+                                        </v-row>
                                     </div>
 
                                     <div class="mt-3">
@@ -153,7 +178,7 @@
                                         <InputLabel for="ssn" value="Social Security Number"/>
                                         <TextInput
                                             id="ssn"
-                                            type="email"
+                                            type="text"
                                             class="mt-1 block w-full"
                                             v-model="account.ssn"
                                             required
@@ -177,17 +202,34 @@
                                         <InputError class="mt-2" :message="account.errors.license_number"/>
                                     </div>
 
+                                    <div class="flex items-center gap-4 mt-5">
+                                        <PrimaryButton :disabled="account.processing">Save</PrimaryButton>
+
+                                        <Transition
+                                            enter-active-class="transition ease-in-out"
+                                            enter-from-class="opacity-0"
+                                            leave-active-class="transition ease-in-out"
+                                            leave-to-class="opacity-0"
+                                        >
+                                            <p
+                                                v-if="account.recentlySuccessful"
+                                                class="text-sm text-gray-600"
+                                            >
+                                                Saved.
+                                            </p>
+                                        </Transition>
+                                    </div>
+
                                 </form>
 
 
-                            </v-card-text>
-                        </v-card>
+
                     </v-col>
                 </v-row>
 
 
             </div>
-        </div>
+
     </div>
 
 </template>
@@ -198,10 +240,17 @@ import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
 import {useForm} from "@inertiajs/vue3";
 import Dropdown from "@/Components/Dropdown.vue";
+import PrimaryButton from "@/Components/PrimaryButton.vue";
 
 export default {
     name: "AddAccount",
-    components: {Dropdown, InputError, InputLabel, TextInput},
+    components: {PrimaryButton, Dropdown, InputError, InputLabel, TextInput},
+    props:{
+      onboard:{
+          type:Boolean,
+          default:false
+      }
+    },
     data() {
         return {
             step: 1,
@@ -215,6 +264,7 @@ export default {
                     state: this.$page.props.auth.user.account ? this.$page.props.auth.user.account.state : "",
                     city: this.$page.props.auth.user.account ? this.$page.props.auth.user.account.city : "",
                     street: this.$page.props.auth.user.account ? this.$page.props.auth.user.account.street : "",
+                    zip: this.$page.props.auth.user.account ? this.$page.props.auth.user.account.zip : "",
                     email: this.$page.props.auth.user.account ? this.$page.props.auth.user.account.email : this.$page.props.auth.user.email,
                     ssn: this.$page.props.auth.user.account ? this.$page.props.auth.user.account.ssn : "",
                     license_number: this.$page.props.auth.user.account ?  this.$page.props.auth.user.account.license_number : ""

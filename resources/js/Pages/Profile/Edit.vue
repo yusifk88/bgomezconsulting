@@ -4,6 +4,7 @@ import DeleteUserForm from './Partials/DeleteUserForm.vue';
 import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
 import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
 import { Head } from '@inertiajs/vue3';
+import AddAccount from "@/Components/AddAccount.vue";
 
 defineProps({
     mustVerifyEmail: {
@@ -44,6 +45,10 @@ defineProps({
                 >
                     <UpdatePasswordForm class="max-w-xl" />
                 </div>
+
+
+                <add-account>
+                </add-account>
 
                 <div
                     class="bg-white p-4 shadow sm:rounded-lg sm:p-8"

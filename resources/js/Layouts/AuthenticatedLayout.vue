@@ -211,7 +211,7 @@ const showingNavigationDropdown = ref(false);
             <!-- Page Content -->
             <main>
                 <slot v-if="$page.props.auth.user.account" />
-                <add-account v-else></add-account>
+                <add-account :onboard="true" v-else></add-account>
             </main>
 
 
