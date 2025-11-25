@@ -98,6 +98,15 @@ const submit = () => {
                     Forgot your password?
                 </Link>
 
+
+                <Link
+                    v-if="canResetPassword"
+                    :href="route('register')"
+                    class="rounded-md text-sm text-gray-600 underline ml-3 mr-3 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                    Don't have an account?
+                </Link>
+
                 <PrimaryButton
                     class="ms-4"
                     :class="{ 'opacity-25': form.processing }"
