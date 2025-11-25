@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Account extends Model
 {
     protected $table = "accounts";
-    protected $fillable = ["name", "occupation", "dob", "user_id", "address", "phone", "state", "city", "street", "email", "ssn", "license_number", "dob"];
+    protected $fillable = ["name", "occupation", "dob", "user_id", "address", "phone", "state", "city", "street", "email", "ssn", "license_number"];
 
 
     /**

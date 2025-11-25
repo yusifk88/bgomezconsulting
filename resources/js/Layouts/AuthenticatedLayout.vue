@@ -6,6 +6,7 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/vue3';
+import AddAccount from "@/Components/AddAccount.vue";
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -15,6 +16,7 @@ const showingNavigationDropdown = ref(false);
     <div>
         <div class="min-h-screen bg-gray-100">
             <nav
+                v-if="$page.props.auth.user.account"
                 class="border-b border-gray-100 text-white" style="background-color: #1C315A"
             >
                 <!-- Primary Navigation Menu -->
@@ -208,8 +210,10 @@ const showingNavigationDropdown = ref(false);
 
             <!-- Page Content -->
             <main>
-                <slot />
+                <slot v-if="$page.props.auth.user.account" />
+                <add-account v-else></add-account>
             </main>
+
 
         </div>
     </div>
