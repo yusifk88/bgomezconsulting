@@ -33,7 +33,10 @@ const language = ref(locale().local);
                 <v-btn active-color="cyan"  :active="route().current('resources')" v-if="!$vuetify.display.mobile" :href="route('resources')">{{ locale().trans.resources }}</v-btn>
                 <v-btn active-color="cyan"  :active="route().current('about')" v-if="!$vuetify.display.mobile" :href="route('about')">{{ locale().trans.about_us }}</v-btn>
                 <v-btn active-color="cyan"  :active="route().current('contact')" v-if="!$vuetify.display.mobile" :href="route('contact')">{{ locale().trans.contact_us }}</v-btn>
-                <v-btn active-color="cyan"  variant="flat" :href="route('login')">{{ locale().trans.login }}</v-btn>
+                <v-btn active-color="cyan" v-if="!$page.props.auth.user" variant="flat" :href="route('login')">{{ locale().trans.login }}</v-btn>
+
+                <v-btn active-color="cyan" v-else variant="flat" :href="route('login')"><v-icon>mdi-account-outline</v-icon>{{ locale().trans.account }}</v-btn>
+
                 <v-select
                     class="mt-6 ml-1"
                     density="compact"

@@ -4,7 +4,7 @@ return [
     "tagline" => "Expertos en contabilidad listos para ayudar a que su negocio prospere.",
     "get_started" => "Comenzar",
     "home" => "Inicio",
-
+    "account" => "Cuenta",
 
     "get_started_with_your_texes"=>"Regístrese para comenzar con sus impuestos",
     "name"=>"Nombre",

@@ -57,10 +57,14 @@ Route::group(["middleware" => ["auth:sanctum", "verified"]], function () {
      */
 
     Route::post("/account", [AccountsController::class, "store"])->name("account.store");
+    Route::post("/account/spouse", [AccountsController::class, "saveSpouse"])->name("account.storeSpouse");
+    Route::post("/account/dependant", [AccountsController::class, "saveDependent"])->name("account.storeDependant");
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::delete("/dependant/{id}",[AccountsController::class,"deletedDependant"])->name("dependant.destroy");
 });
 
 

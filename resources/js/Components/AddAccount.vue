@@ -8,24 +8,22 @@
             >
                 <v-row dense>
                     <v-col cols="12" sm="6" :class="{'mx-auto':onboard}">
-                       <aos-vue animation="fade-up">
 
                         <h1 class="text-h4 font-weight-black mt-5 text-center" v-if="onboard">Hello {{$page.props.auth.user.name}}</h1>
                         <p class="text-center text-h5 mt-2" v-if="onboard">Complete your profile to continue</p>
                         <p class="text-center mt-2" v-if="onboard">Set up your profile to make it easier to understand your tax needs, this
                             include information about you and household.</p>
                            <h2 v-if="!onboard" class="text-lg font-medium text-gray-900 mt-4">
-                               Update Bio & household information
+                               Update Your Bio Information
                            </h2>
-                       </aos-vue>
 
 
                                 <form @submit.prevent="account.post(route('account.store'))">
 
                                     <div>
-                                        <InputLabel for="name" value="Name"/>
+                                        <InputLabel for="account-name" value="Name"/>
                                         <TextInput
-                                            id="name"
+                                            id="account-name"
                                             type="text"
                                             class="mt-1 block w-full"
                                             v-model="account.name"
@@ -125,7 +123,6 @@
                                             class="mt-1 w-full"
                                             v-model="account.city"
                                             required
-
                                             autocomplete="city"
                                         />
 
@@ -161,9 +158,9 @@
                                     </div>
 
                                     <div class="mt-3">
-                                        <InputLabel for="email" value="Email"/>
+                                        <InputLabel for="account-email" value="Email"/>
                                         <TextInput
-                                            id="email"
+                                            id="account-email"
                                             type="email"
                                             class="mt-1 block w-full"
                                             v-model="account.email"
@@ -226,7 +223,6 @@
 
                     </v-col>
                 </v-row>
-
 
             </div>
 

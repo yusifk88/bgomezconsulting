@@ -3,7 +3,7 @@ return [
     "consulting_services" => "Consulting Services",
     "tagline" => "Experts in accounting ready to help your business thrive.",
     "get_started" => "Get Started",
-
+    "account" => "Account",
 
     "get_started_with_your_texes"=>"Register to get started with your texes",
     "name"=>"Name",

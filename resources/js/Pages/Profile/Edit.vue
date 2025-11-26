@@ -5,6 +5,9 @@ import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
 import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
 import { Head } from '@inertiajs/vue3';
 import AddAccount from "@/Components/AddAccount.vue";
+import AddSpouse from "@/Components/AddSpouse.vue";
+import AddDependants from "@/Components/AddDependants.vue";
+import AddFinances from "@/Components/AddFinances.vue";
 
 defineProps({
     mustVerifyEmail: {
@@ -51,6 +54,26 @@ defineProps({
                 </add-account>
 
                 <div
+                    class="bg-white p-4 shadow sm:rounded-lg sm:p-8"
+                >
+                    <add-spouse v-if="$page.props.auth.user.account"></add-spouse>
+                    <v-alert variant="text" color="blue" prominent type="info" v-else>
+                        <h3>You need to submit your bio information first before you can add a spouse to your account</h3>
+                    </v-alert>
+                </div>
+
+                <div
+                    class="bg-white p-4 shadow sm:rounded-lg sm:p-8"
+                >
+                    <add-dependants></add-dependants>
+                </div>
+
+                <div
+                    class="bg-white p-4 shadow sm:rounded-lg sm:p-8"
+                >
+                    <add-finances></add-finances>
+                </div>
+                    <div
                     class="bg-white p-4 shadow sm:rounded-lg sm:p-8"
                 >
                     <DeleteUserForm class="max-w-xl" />
