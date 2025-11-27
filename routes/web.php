@@ -59,6 +59,8 @@ Route::group(["middleware" => ["auth:sanctum", "verified"]], function () {
     Route::post("/account", [AccountsController::class, "store"])->name("account.store");
     Route::post("/account/spouse", [AccountsController::class, "saveSpouse"])->name("account.storeSpouse");
     Route::post("/account/dependant", [AccountsController::class, "saveDependent"])->name("account.storeDependant");
+    Route::post("/account/finance", [AccountsController::class, "saveFinance"])->name("account.storeFinance");
+    Route::delete("/account/finance/{id}", [AccountsController::class, "deleteFinance"])->name("finance.destroy");
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

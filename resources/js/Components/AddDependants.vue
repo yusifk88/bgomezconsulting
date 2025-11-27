@@ -141,7 +141,7 @@
             </h2>
 
             <p class="mt-1 text-sm text-gray-600">
-                Are you sure want delete this dependant?
+                Are you sure want to delete this dependant?
             </p>
             <div class="mt-6 flex justify-end">
                 <SecondaryButton @click="closeModal">

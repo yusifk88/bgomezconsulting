@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Account;
 use App\Models\Dependant;
+use App\Models\Finance;
 use App\Models\Spouse;
 use Illuminate\Http\Request;
 
@@ -85,6 +86,32 @@ class AccountsController extends Controller
     {
         $user = auth()->user();
         Dependant::where("account_id", $user->account->id)->where("id", $id)->delete();
+
+    }
+
+    public function saveFinance(Request $request)
+    {
+        $request->validate([
+            "name" => "required",
+            "type" => "required|in:income,expense",
+            "amount" => "required|numeric",
+        ]);
+
+        $user = auth()->user();
+
+        $data = $request->all();
+
+        $data["account_id"] = $user->account->id;
+
+        Finance::create($data);
+
+        return redirect()->back();
+
+    }
+
+    public function deleteFinance(string $id)
+    {
+        Finance::where("account_id", auth()->user()->account->id)->where("id",$id)->delete();
 
     }
 
