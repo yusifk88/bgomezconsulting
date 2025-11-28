@@ -2,7 +2,7 @@
     <v-row dense>
         <v-col cols="12" sm="6">
 
-            <h2 id="spouse-data" class="text-lg font-medium text-gray-900 mt-4">
+            <h2  class="text-lg font-medium text-gray-900 mt-4">
                 Update Spouse Information
             </h2>
 

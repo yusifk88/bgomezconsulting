@@ -13,7 +13,7 @@
                         <p class="text-center text-h5 mt-2" v-if="onboard">Complete your profile to continue</p>
                         <p class="text-center mt-2" v-if="onboard">Set up your profile to make it easier to understand your tax needs, this
                             include information about you and household.</p>
-                           <h2 v-if="!onboard" class="text-lg font-medium text-gray-900 mt-4">
+                           <h2 id="account-info" v-if="!onboard" class="text-lg font-medium text-gray-900 mt-4">
                                Update Your Bio Information
                            </h2>
 

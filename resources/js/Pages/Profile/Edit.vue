@@ -23,14 +23,6 @@ defineProps({
     <Head title="Profile" />
 
     <AuthenticatedLayout>
-        <template #header>
-            <h2
-                class="text-xl font-semibold leading-tight text-gray-800"
-            >
-                Profile
-            </h2>
-        </template>
-
         <div class="py-12">
             <div class="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
                 <div
@@ -54,6 +46,7 @@ defineProps({
                 </add-account>
 
                 <div
+                    id="spouse-info"
                     class="bg-white p-4 shadow sm:rounded-lg sm:p-8"
                 >
                     <add-spouse v-if="$page.props.auth.user.account"></add-spouse>
@@ -63,12 +56,14 @@ defineProps({
                 </div>
 
                 <div
+                    id="dependant-info"
                     class="bg-white p-4 shadow sm:rounded-lg sm:p-8"
                 >
                     <add-dependants></add-dependants>
                 </div>
 
                 <div
+                    id="finance-info"
                     class="bg-white p-4 shadow sm:rounded-lg sm:p-8"
                 >
                     <add-finances></add-finances>

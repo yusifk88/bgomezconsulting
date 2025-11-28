@@ -3,7 +3,7 @@
     <v-row dense>
         <v-col cols="12">
 
-            <h2 id="spouse-data" class="text-lg font-medium text-gray-900 mt-4">
+            <h2 class="text-lg font-medium text-gray-900 mt-4">
                 Manage Your Dependants
             </h2>
 

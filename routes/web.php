@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RecordsController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -62,11 +63,22 @@ Route::group(["middleware" => ["auth:sanctum", "verified"]], function () {
     Route::post("/account/finance", [AccountsController::class, "saveFinance"])->name("account.storeFinance");
     Route::delete("/account/finance/{id}", [AccountsController::class, "deleteFinance"])->name("finance.destroy");
 
+    /**
+     * profile routes
+     */
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
     Route::delete("/dependant/{id}",[AccountsController::class,"deletedDependant"])->name("dependant.destroy");
+
+    /**
+     * records routes
+     */
+
+    Route::get("/record",[RecordsController::class, "create"])->name("record.index");
+
+
 });
 
 
