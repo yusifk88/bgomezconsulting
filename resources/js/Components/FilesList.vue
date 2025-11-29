@@ -1,12 +1,45 @@
+<template>
+    <v-list>
+        <v-list-item
+            :href="route('records.show',item.id)"
+            lines="three"
+            class="border rounded-lg mb-3"
+            v-for="item in items"
+            :key="item.id">
+            <template v-slot:append>
+                <p class="d-block mr-1"><status-chip :label="item.status"></status-chip></p>
+
+                                    <span class="text-grey">
+                                    {{ item.files.length }} Files <v-icon>mdi-chevron-right</v-icon>
+                                    </span>
+            </template>
+            <template v-slot:prepend>
+                <v-icon size="large" color="#1C315A">mdi-file-outline</v-icon>
+            </template>
+            <v-list-item-title style="color: #1C315A">{{ item.title }}</v-list-item-title>
+            <v-list-item-subtitle>
+                {{ item.description }}
+            </v-list-item-subtitle>
+            <v-list-item-subtitle>
+                Uploaded At:{{ item.created_at }} &nbsp;&nbsp; Updated At {{ item.updated_at }}
+            </v-list-item-subtitle>
+        </v-list-item>
+    </v-list>
+
+</template>
 <script>
+import StatusChip from "@/Components/statusChip.vue";
+
 export default {
-name: "FilesList"
+    name: "FilesList",
+    components: {StatusChip},
+    props: {
+        items: {
+            type: Array
+        }
+    }
 }
 </script>
-
-<template>
-  $END$
-</template>
 
 <style scoped>
 

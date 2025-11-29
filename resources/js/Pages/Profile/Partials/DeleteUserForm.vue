@@ -41,6 +41,9 @@ const closeModal = () => {
 <template>
     <section class="space-y-6">
         <header>
+            <v-alert class="w-100" variant="tonal" prominent type="warning" color="red">
+
+
             <h2 class="text-lg font-medium text-gray-900">
                 Delete Account
             </h2>
@@ -50,9 +53,11 @@ const closeModal = () => {
                 be permanently deleted. Before deleting your account, please
                 download any data or information that you wish to retain.
             </p>
+                <DangerButton class="mt-5 ma-2 ml-1" @click="confirmUserDeletion">Delete Account</DangerButton>
+
+            </v-alert>
         </header>
 
-        <DangerButton @click="confirmUserDeletion">Delete Account</DangerButton>
 
         <Modal :show="confirmingUserDeletion" @close="closeModal">
             <div class="p-6">

@@ -17,7 +17,8 @@ const showingNavigationDropdown = ref(false);
         <div class="min-h-screen bg-gray-100">
             <nav
                 v-if="$page.props.auth.user.account"
-                class="border-b border-gray-100 text-white" style="background-color: #1C315A"
+                class="border-b border-gray-100 text-white d-print-none"
+                style="background-color: #1C315A"
             >
                 <!-- Primary Navigation Menu -->
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

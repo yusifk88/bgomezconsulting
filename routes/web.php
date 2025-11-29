@@ -49,9 +49,7 @@ Route::get("/contact", function () {
 
 Route::group(["middleware" => ["auth:sanctum", "verified"]], function () {
 
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [RecordsController::class,"dashboard"])->name('dashboard');
 
     /**
      * accounts routes
@@ -76,7 +74,14 @@ Route::group(["middleware" => ["auth:sanctum", "verified"]], function () {
      * records routes
      */
 
-    Route::get("/record",[RecordsController::class, "create"])->name("record.index");
+    Route::get("/records/new",[RecordsController::class, "create"])->name("records.new");
+    Route::get("/records/{id}",[RecordsController::class, "show"])->name("records.show");
+    Route::post("/records",[RecordsController::class, "store"])->name("records.store");
+    Route::get("/file/{id}/download",[RecordsController::class, "downloadFile"])->name("records.downloadFile");
+    Route::post("files/{id}/add",[RecordsController::class, "addFile"])->name("file.add");
+    Route::post("records/{id}",[RecordsController::class, "update"])->name("records.update");
+    Route::delete("/file/{id}/delete",[RecordsController::class, "destroyFile"])->name("file.delete");
+    Route::delete("/record/{id}/delete",[RecordsController::class, "destroy"])->name("record.delete");
 
 
 });

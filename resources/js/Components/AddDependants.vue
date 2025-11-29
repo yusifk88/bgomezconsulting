@@ -158,8 +158,8 @@
                 </Link>
             </div>
         </div>
-
     </Modal>
+
 </template>
 
 <script>

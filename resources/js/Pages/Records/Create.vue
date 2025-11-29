@@ -13,7 +13,7 @@
                         </h2>
 
                         <form
-                            @submit.prevent="record.patch(route('profile.update'))"
+                            @submit.prevent="record.post(route('records.store'))"
                             class="mt-6 space-y-6"
                         >
                             <div>
@@ -26,7 +26,7 @@
                                     required
                                     autofocus
                                     autocomplete="name"
-                                    placeholder="Add a title to your documents"
+                                    placeholder="My tax filing for 2025"
                                 />
 
                                 <InputError class="mt-2" :message="record.errors.title"/>
@@ -37,7 +37,7 @@
                                 <InputLabel for="description" value="Description"/>
                                 <v-textarea
                                     color="indigo"
-                                    v-model="record.title"
+                                    v-model="record.description"
                                     auto-grow
                                     id="description"
                                     required
@@ -46,7 +46,7 @@
                                     placeholder="Describe the documents here"
                                 ></v-textarea>
 
-                                <InputError class="mt-2" :message="record.errors.title"/>
+                                <InputError class="mt-2" :message="record.errors.description"/>
                             </div>
 
 
@@ -54,7 +54,7 @@
                                 <InputLabel for="files" value="Upload Files"/>
                                 <v-file-upload
                                 id="files"
-                                v-model="record.files"
+                                v-model="record.documents"
                                 required
                                 multiple
                                 density="compact"
@@ -66,7 +66,9 @@
                                 >
                                 </v-file-upload>
 
-                                <danger-button v-if="record.files.length>0" @click="record.files=[]">Clear Files</danger-button>
+                                <InputError class="mt-2" :message="record.errors.documents"/>
+
+                                <danger-button v-if="record.documents.length>0" @click="record.documents=[]">Clear Files</danger-button>
 
                             </div>
 
@@ -95,6 +97,7 @@
             </div>
         </div>
 
+        <v-snackbar color="green" v-model="record.recentlySuccessful">Documents submitted</v-snackbar>
     </authenticated-layout>
 
 
@@ -117,7 +120,7 @@ export default {
             record: useForm({
                 title: "",
                 description: "",
-                files: []
+                documents: []
             })
         }
     }

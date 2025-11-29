@@ -39,7 +39,7 @@
                         v-model="finance.name"
                         id="fin-name"
                         density="compact"
-                        :items="items"
+                        :items="names"
                         hint="If your option is not available type your option in and save"
                         persistent-hint
                     ></v-combobox>
@@ -52,7 +52,7 @@
 
             <v-col cols="12" sm="2">
                 <div>
-                    <InputLabel for="fin-amount" value="Amount(USD)"/>
+                    <InputLabel for="fin-amount" :value="finance.type==='income' ? 'Quantity' : 'Amount(USD)'"/>
                     <TextInput
                         id="fin-amount"
                         type="number"
@@ -79,7 +79,7 @@
                 <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Amount</th>
+                    <th>Quantity</th>
                     <th>--</th>
                 </tr>
                 </thead>
@@ -89,7 +89,7 @@
                         {{item.name}}
                     </td>
                     <td>
-                        ${{item.amount}}
+                        {{item.amount}}
                     </td>
                     <td>
                         <danger-button  @click="selectedRecord=item; confirmingDeletion=true">Delete</danger-button>
@@ -157,7 +157,7 @@
                     method="delete"
                     @click="closeModal"
                 >
-                    Delete Dependant
+                    Delete
                 </Link>
             </div>
         </div>
@@ -192,12 +192,17 @@ export default {
                 amount: 0,
                 type: "income"
             }),
-            items: ["w-2"],
+            expenseNames: ["Medial Expenses","Real Estate Taxes","Personal Property","Mortgage interest","Job Expenses","State and Local Income Tax","General Sale Tax","Legal Expenses"],
+            incomeNames: ["w-2","1099-INT","1099-DIV","SSA-1099","1099-MSC","W-2G","1099-R","1099-B"],
+
             confirmingDeletion:false,
             selectedRecord:null
         }
     },
     computed: {
+        names(){
+            return this.finance.type=='income'? this.incomeNames : this.expenseNames;
+        },
         incomes() {
 
             return this.$page.props.auth.user.account.financials.filter(item => item.type.toLowerCase() === 'income');

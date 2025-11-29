@@ -17,6 +17,7 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->unsignedBigInteger('account_id');
             $table->json("bio_info")->nullable();
+            $table->string("status")->default("pending");
             $table->timestamps();
         });
     }
