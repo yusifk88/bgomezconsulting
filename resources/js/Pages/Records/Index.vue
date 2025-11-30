@@ -19,7 +19,7 @@
                 class="overflow-hidden bg-white shadow-sm sm:rounded-lg mt-5"
             >
                 <div class="p-6 text-gray-900">
-                    <p>Your Submissions</p>
+                    <p>{{locale().trans.submissions}}</p>
 
                     <files-list v-if="records.data.length>0" :items="records.data"></files-list>
                     <v-alert v-else class="mt-3 text-center"
@@ -39,8 +39,10 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import {Head} from "@inertiajs/vue3";
 import FilesList from "@/Components/FilesList.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
+import {locale} from "@/utility.js";
 
 export default {
+    methods: {locale},
     components: {PrimaryButton, FilesList, Head, AuthenticatedLayout},
     props:{
       records:{

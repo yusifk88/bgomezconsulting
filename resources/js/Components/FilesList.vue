@@ -10,7 +10,7 @@
                 <p class="d-block mr-1"><status-chip :label="item.status"></status-chip></p>
 
                                     <span class="text-grey">
-                                    {{ item.files.length }} Files <v-icon>mdi-chevron-right</v-icon>
+                                    {{ item.files.length }} {{locale().trans.file}}s <v-icon>mdi-chevron-right</v-icon>
                                     </span>
             </template>
             <template v-slot:prepend>
@@ -29,9 +29,11 @@
 </template>
 <script>
 import StatusChip from "@/Components/statusChip.vue";
+import {locale} from "@/utility.js";
 
 export default {
     name: "FilesList",
+    methods: {locale},
     components: {StatusChip},
     props: {
         items: {

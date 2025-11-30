@@ -61,6 +61,10 @@ return [
     "expense"=>"Expense",
     "amount"=>"Amount",
 
+
+    "submit_new"=>"Submit New",
+    "no_submissions_yet"=>'Your submissions will show here. You have not submitted any documents yet. To submit your documents click on the "submit new" button',
+
     "recent" => "Recent",
     "submit_documents" => "Submit Documents",
     "no_recent_submissions" => "Your recent submissions will show here. You have not submitted any documents yet.",
