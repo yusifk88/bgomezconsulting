@@ -166,13 +166,23 @@ class RecordsController extends Controller
         ]);
 
         $user = auth()->user();
-        $record = Record::with("files")->where("account_id",$user->account->id)->findOrFail($id);
+        $record = Record::with("files")->where("account_id", $user->account->id)->findOrFail($id);
 
         $data = $request->only(["title", "description"]);
         $data["bio_info"] = json_encode($user->account);
 
         $record->update($data);
         return redirect()->back();
+
+    }
+
+    public function index()
+    {
+        $user = auth()->user();
+        $records = Record::with("files")->where("account_id", $user->account->id)
+            ->orderBy("created_at", "desc")
+            ->paginate(20);
+        return Inertia::render("Records/Index", ["records" => $records]);
 
     }
 

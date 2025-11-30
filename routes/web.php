@@ -74,6 +74,7 @@ Route::group(["middleware" => ["auth:sanctum", "verified"]], function () {
      * records routes
      */
 
+    Route::get("/records",[RecordsController::class, "index"])->name("records.index");
     Route::get("/records/new",[RecordsController::class, "create"])->name("records.new");
     Route::get("/records/{id}",[RecordsController::class, "show"])->name("records.show");
     Route::post("/records",[RecordsController::class, "store"])->name("records.store");

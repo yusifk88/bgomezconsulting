@@ -9,7 +9,7 @@
                 >
                     <div class="p-6 text-gray-900">
                         <h2 class="text-lg font-medium text-gray-900">
-                            Submit documents for your tax filing process
+                            {{locale().trans.tax_form_title}}
                         </h2>
 
                         <form
@@ -17,7 +17,7 @@
                             class="mt-6 space-y-6"
                         >
                             <div>
-                                <InputLabel for="name" value="Title"/>
+                                <InputLabel for="name" :value="locale().trans.title"/>
                                 <TextInput
                                     id="name"
                                     type="text"
@@ -26,7 +26,7 @@
                                     required
                                     autofocus
                                     autocomplete="name"
-                                    placeholder="My tax filing for 2025"
+                                    :placeholder="locale().trans.tax_form_title_placeholder"
                                 />
 
                                 <InputError class="mt-2" :message="record.errors.title"/>
@@ -34,7 +34,7 @@
 
 
                             <div>
-                                <InputLabel for="description" value="Description"/>
+                                <InputLabel for="description" :value="locale().trans.description"/>
                                 <v-textarea
                                     color="indigo"
                                     v-model="record.description"
@@ -43,7 +43,7 @@
                                     required
                                     rows="3"
                                     variant="outlined"
-                                    placeholder="Describe the documents here"
+                                    :placeholder="locale().trans.description_placeholder"
                                 ></v-textarea>
 
                                 <InputError class="mt-2" :message="record.errors.description"/>
@@ -51,17 +51,17 @@
 
 
                             <div>
-                                <InputLabel for="files" value="Upload Files"/>
+                                <InputLabel for="files" :value="locale().trans.upload_files"/>
                                 <v-file-upload
                                 id="files"
                                 v-model="record.documents"
                                 required
                                 multiple
                                 density="compact"
-                                title="Drop files here or click to add files"
+                                :title="locale().trans.upload_files_placeholder"
                                 show-size
                                 class="rounded-lg"
-                                browse-text="Drop files here or click to add files"
+                                :browse-text="locale().trans.upload_files_placeholder"
                                 filter-by-type="image/png, image/jpeg, , .pdf, .doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                                 >
                                 </v-file-upload>
@@ -73,7 +73,7 @@
                             </div>
 
                             <div class="flex items-center gap-4">
-                                <PrimaryButton :disabled="record.processing">Submit</PrimaryButton>
+                                <PrimaryButton :disabled="record.processing">{{locale().trans.submit}}</PrimaryButton>
 
                                 <Transition
                                     enter-active-class="transition ease-in-out"
@@ -85,7 +85,7 @@
                                         v-if="record.recentlySuccessful"
                                         class="text-sm text-gray-600"
                                     >
-                                        Saved.
+                                       {{locale().trans.saved}}
                                     </p>
                                 </Transition>
                             </div>
@@ -97,7 +97,7 @@
             </div>
         </div>
 
-        <v-snackbar color="green" v-model="record.recentlySuccessful">Documents submitted</v-snackbar>
+        <v-snackbar color="green" v-model="record.recentlySuccessful">{{locale().trans.documents_submitted}}</v-snackbar>
     </authenticated-layout>
 
 
@@ -111,9 +111,11 @@ import InputError from "@/Components/InputError.vue";
 import {useForm} from "@inertiajs/vue3";
 import DangerButton from "@/Components/DangerButton.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
+import {locale} from "@/utility.js";
 
 export default {
     name: "Create",
+    methods: {locale},
     components: {PrimaryButton, DangerButton, InputError, InputLabel, TextInput, AuthenticatedLayout},
     data() {
         return {

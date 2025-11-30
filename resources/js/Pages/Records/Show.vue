@@ -13,25 +13,27 @@
                             </v-toolbar-title>
                             <v-spacer></v-spacer>
                             <v-toolbar-items>
-                                <v-btn color="#1C315A" @click="showAccount=false; print()">Print
+                                <v-btn color="#1C315A" @click="showAccount=false; print()">{{locale().trans.print}}
                                     <v-icon color="#1C315A">mdi-printer</v-icon>
                                 </v-btn>
-                                <v-btn color="#1C315A">View Comments</v-btn>
+                                <v-btn color="#1C315A">{{locale().trans.reviews}}</v-btn>
                                 <v-menu>
+
                                     <template v-slot:activator="{props}">
-                                        <v-btn color="#1C315A" v-bind="props">More
+                                        <v-btn color="#1C315A" v-bind="props">{{locale().trans.more}}
                                             <v-icon>mdi-chevron-down</v-icon>
                                         </v-btn>
                                     </template>
+
                                     <v-list class="rounded-lg">
                                         <v-list-item @click="showUpdateForm=true" class="border-b">
                                             <v-list-item-title>
-                                                Edit Info.
+                                                {{locale().trans.edit_info}}
                                             </v-list-item-title>
                                         </v-list-item>
                                         <v-list-item @click="confirmingRecordDeletion=true">
                                             <v-list-item-title class="text-red">
-                                                Delete
+                                                {{locale().trans.delete}}
                                             </v-list-item-title>
                                         </v-list-item>
 
@@ -40,33 +42,33 @@
                             </v-toolbar-items>
                         </v-toolbar>
                         <v-list>
-                            <v-list-subheader>Details</v-list-subheader>
+                            <v-list-subheader>{{locale().trans.details}}</v-list-subheader>
                             <v-list-item>
                                 <v-list-item-title class="text-h4">
                                     {{ record.title }}
                                 </v-list-item-title>
-                                <v-list-item-subtitle>Title</v-list-item-subtitle>
+                                <v-list-item-subtitle>{{locale().trans.title}}</v-list-item-subtitle>
                             </v-list-item>
 
                             <v-list-item>
                                 <p class="text-wrap">
                                     {{ record.description }}
                                 </p>
-                                <v-list-item-subtitle>Description</v-list-item-subtitle>
+                                <v-list-item-subtitle>{{locale().trans.description}}</v-list-item-subtitle>
                             </v-list-item>
 
                             <v-list-item>
                                 <p class="text-wrap">
                                     {{ record.created_at }}
                                 </p>
-                                <v-list-item-subtitle>Updated At</v-list-item-subtitle>
+                                <v-list-item-subtitle>{{locale().trans.uploaded_at}}</v-list-item-subtitle>
                             </v-list-item>
 
 
                         </v-list>
 
                         <v-list rounded v-if="record.files.length>0">
-                            <v-list-subheader>Documents</v-list-subheader>
+                            <v-list-subheader>{{locale().trans.documents}}</v-list-subheader>
                             <v-list-item
                                 :ripple="false"
                                 link
@@ -80,7 +82,10 @@
                                 <template v-slot:append>
                                     <v-menu>
                                         <template v-slot:activator="{props}">
-                                            <v-btn class="d-print-none" color="grey" size="small" variant="outlined"
+                                            <v-btn class="d-print-none"
+                                                   color="grey"
+                                                   size="small"
+                                                   variant="outlined"
                                                    icon v-bind="props">
                                                 <v-icon color="grey">mdi-chevron-down</v-icon>
                                             </v-btn>
@@ -88,11 +93,11 @@
                                         <v-list class="rounded-lg">
                                             <v-list-item :href="route('records.downloadFile',file.id)">
                                                 <v-list-item-title>
-                                                    Download
+                                                    {{locale().trans.download}}
                                                 </v-list-item-title>
                                             </v-list-item>
                                             <v-list-item @click="selectedFile=file; confirmingDeletion=true">
-                                                <v-list-item-title class="text-red">Delete</v-list-item-title>
+                                                <v-list-item-title class="text-red">{{locale().trans.delete}}</v-list-item-title>
                                             </v-list-item>
                                         </v-list>
                                     </v-menu>
@@ -102,21 +107,21 @@
 
                         <v-alert v-else class="mt-3"
                                  style="border: 2px dashed grey">
-                            <h4 class="text-center">You have not added files to this submission yet</h4>
+                            <h4 class="text-center">{{locale().trans.we_delete_files}}</h4>
                         </v-alert>
                         <form @submit.prevent="addFilesForm.post(route('file.add',record.id))">
                             <v-file-upload
                                 density="compact"
                                 class="mt-5 d-print-none"
-                                title="Drop here or click to add files"
+                                :title="locale().trans.upload_files_placeholder"
                                 v-model="addFilesForm.documents"
                                 multiple
                                 filter-by-type="image/png, image/jpeg, , .pdf, .doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                             ></v-file-upload>
 
                             <div class="flex items-center gap-4 mt-5" v-if="addFilesForm.documents.length">
-                                <danger-button @click="addFilesForm.documents=[]">Clear</danger-button>
-                                <PrimaryButton :disabled="addFilesForm.processing">Add Files</PrimaryButton>
+                                <danger-button @click="addFilesForm.documents=[]">{{locale().trans.clear}}</danger-button>
+                                <PrimaryButton :disabled="addFilesForm.processing">{{locale().trans.add_files}}</PrimaryButton>
 
                                 <Transition
                                     enter-active-class="transition ease-in-out"
@@ -128,7 +133,7 @@
                                         v-if="addFilesForm.recentlySuccessful"
                                         class="text-sm text-gray-600"
                                     >
-                                        Saved.
+                                        {{locale().trans.saved}}
                                     </p>
                                 </Transition>
                             </div>
@@ -140,11 +145,10 @@
                             <v-expansion-panel
                                 color="#1C315A"
                                 focusable
-
                             >
                                 <v-expansion-panel-title class="d-print-none">
                                     <v-icon>mdi-badge-account-horizontal-outline</v-icon>
-                                    View Your Information
+                                    {{locale().trans.your_information}}
                                 </v-expansion-panel-title>
                                 <v-expansion-panel-text>
                                     <show-infor :accountInfo="record.bio_info"></show-infor>
@@ -163,16 +167,16 @@
                 <h2
                     class="text-lg font-medium text-gray-900"
                 >
-                    Confirm Delete
+                    {{locale().trans.confirm_delete}}
                 </h2>
 
                 <p class="mt-1 text-sm text-gray-600">
-                    Are you sure want to delete this submission?
+                    {{locale().trans.submission_delete_text}}
                 </p>
-                <p class="text-red">We will delete everything, including your documents from storage</p>
+                <p class="text-red">{{locale().trans.we_delete_files}}</p>
                 <div class="mt-6 flex justify-end">
                     <SecondaryButton @click="closeModal">
-                        Cancel
+                        {{locale().trans.cancel}}
                     </SecondaryButton>
 
                     <Link
@@ -181,7 +185,7 @@
                         method="delete"
                         @click="closeModal"
                     >
-                        Delete
+                        {{locale().trans.delete}}
                     </Link>
                 </div>
             </div>
@@ -193,15 +197,15 @@
                 <h2
                     class="text-lg font-medium text-gray-900"
                 >
-                    Confirm Delete
+                    {{locale().trans.confirm_delete}}
                 </h2>
 
                 <p class="mt-1 text-sm text-gray-600">
-                    Are you sure want to delete this file?
+                    {{locale().trans.file_delete_text}}
                 </p>
                 <div class="mt-6 flex justify-end">
                     <SecondaryButton @click="closeModal">
-                        Cancel
+                        {{locale().trans.cancel}}
                     </SecondaryButton>
 
                     <Link
@@ -211,7 +215,7 @@
                         method="delete"
                         @click="closeModal"
                     >
-                        Delete File
+                        {{locale().trans.delete}}
                     </Link>
                 </div>
             </div>
@@ -222,14 +226,14 @@
                 <h2
                     class="text-lg font-medium text-gray-900"
                 >
-                    Update your request
+                    {{locale().trans.update_submission}}
                 </h2>
 
                 <form
                     @submit.prevent="updateRecord.post(route('records.update',record.id))"
                 >
                     <div class="mt-3">
-                        <InputLabel for="record-name" value="Title"/>
+                        <InputLabel for="record-name" :value="locale().trans.title"/>
                         <TextInput
                             id="record-name"
                             type="text"
@@ -243,7 +247,7 @@
                     </div>
 
                     <div class="mt-3">
-                        <InputLabel for="record-description" value="Descritpion"/>
+                        <InputLabel for="record-description" :value="locale().trans.description"/>
                         <v-textarea
                         variant="outlined"
                         rows="2"
@@ -260,17 +264,17 @@
 
                     <div class="mt-6 flex justify-end">
                         <SecondaryButton @click="closeModal">
-                            Cancel
+                            {{locale().trans.cancel}}
                         </SecondaryButton>
 
-                        <primary-button class="ml-3">Save Changes</primary-button>
+                        <primary-button class="ml-3"> {{locale().trans.save_changes}}</primary-button>
                     </div>
                 </form>
 
             </div>
         </Modal>
 
-        <v-snackbar color="green" v-model="updateRecord.recentlySuccessful">Changes saved</v-snackbar>
+        <v-snackbar color="green" v-model="updateRecord.recentlySuccessful"> {{locale().trans.changes_saved}}</v-snackbar>
 
     </authenticated-layout>
 </template>

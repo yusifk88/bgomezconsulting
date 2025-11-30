@@ -7,6 +7,7 @@ import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/vue3';
 import AddAccount from "@/Components/AddAccount.vue";
+import {locale} from "@/utility.js";
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -42,7 +43,16 @@ const showingNavigationDropdown = ref(false);
                                     :href="route('dashboard')"
                                     :active="route().current('dashboard')"
                                 >
-                                    Dashboard
+                                    {{locale().trans.dashboard}}
+
+                                </NavLink>
+
+                                <NavLink
+                                    class="text-white"
+                                    :href="route('records.index')"
+                                    :active="route().current('records.index')"
+                                >
+                                    {{locale().trans.submissions}}
 
                                 </NavLink>
 
@@ -51,16 +61,8 @@ const showingNavigationDropdown = ref(false);
                                     :href="route('dashboard')"
                                     :active="route().current('dashboard')"
                                 >
-                                    Submissions
 
-                                </NavLink>
-
-                                <NavLink
-                                    class="text-white"
-                                    :href="route('dashboard')"
-                                    :active="route().current('dashboard')"
-                                >
-                                    Updates
+                                    {{locale().trans.reviews}}
 
                                 </NavLink>
 
@@ -231,24 +233,41 @@ const showingNavigationDropdown = ref(false);
             :active="route().current('dashboard')"
         >
             <v-icon>mdi-home-outline</v-icon>
-            <span>Dashboard</span>
+            <span>{{locale().trans.dashboard}}</span>
         </v-btn>
 
         <v-btn
+            color="#1C315A"
             :ripple="false"
+            :href="route('records.index')"
+            :active="route().current('records.index')"
+
         >
             <v-icon>mdi-upload-outline</v-icon>
-            <span>Submissions</span>
+            <span>{{locale().trans.submissions}}</span>
+        </v-btn>
+
+        <v-btn
+            color="#1C315A"
+            :ripple="false"
+            :href="route('records.index')"
+            :active="route().current('records.index')"
+
+        >
+            <v-icon>mdi-comment-outline</v-icon>
+            <span>{{locale().trans.reviews}}</span>
         </v-btn>
 
         <v-btn
             color="#1C315A"
             :ripple="false"
             :href="route('profile.edit')"
+            :active="route().current('profile.edit')"
+
         >
             <v-icon>mdi-account-outline</v-icon>
 
-            <span>Profile</span>
+            <span>{{locale().trans.profile}}</span>
         </v-btn>
     </v-bottom-navigation>
     </v-app>
