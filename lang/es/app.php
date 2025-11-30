@@ -60,6 +60,23 @@ return [
     "documents"=>"Documentos",
 
 
+    "address" => "Dirección",
+    "city" => "Ciudad",
+    "phone"=> "Teléfono",
+    "ssn"=> "Número de Seguro Social",
+    "license_number"=>"Número de licencia",
+    "dob"=>"Fecha de nacimiento",
+    "spouse_information" => "Información del cónyuge",
+    "occupation"=>"Ocupacion",
+    "dependants"=>"Dependentes",
+    "months_in_home"=>"Meses en el hogar",
+    "income"=>"Ingresos",
+    "type"=>"Tipo",
+    "quantity"=>"Cantidad",
+    "expense"=>"Gasto",
+    "amount"=>"Cantidad",
+
+
 
     "get_started_with_your_texes"=>"Regístrese para comenzar con sus impuestos",
     "name"=>"Nombre",
