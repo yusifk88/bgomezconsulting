@@ -59,7 +59,7 @@
 
                             <v-list-item>
                                 <p class="text-wrap">
-                                    {{ record.created_at }}
+                                    {{formatDateTime(record.created_at) }}
                                 </p>
                                 <v-list-item-subtitle>{{locale().trans.uploaded_at}}</v-list-item-subtitle>
                             </v-list-item>
@@ -290,7 +290,7 @@ import StatusChip from "@/Components/statusChip.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
 import TextInput from "@/Components/TextInput.vue";
-import {locale} from "@/utility.js";
+import {formatDateTime, locale} from "@/utility.js";
 
 export default {
     name: "Show",
@@ -322,6 +322,7 @@ export default {
         }
     },
     methods: {
+        formatDateTime,
         locale,
         print() {
             window.print();
