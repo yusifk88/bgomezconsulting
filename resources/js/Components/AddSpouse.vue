@@ -3,7 +3,7 @@
         <v-col cols="12" sm="6">
 
             <h2  class="text-lg font-medium text-gray-900 mt-4">
-                Update Spouse Information
+                {{locale().trans.update_spouse_information}}
             </h2>
 
 
@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="mt-3">
-                    <InputLabel for="spouse-occupation" value="Occupation"/>
+                    <InputLabel for="spouse-occupation" :value="locale().trans.occupation"/>
                     <TextInput
                         id="spouse-occupation"
                         type="text"
@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="mt-3">
-                    <InputLabel for="spouse-dob" value="Date Of Birth"/>
+                    <InputLabel for="spouse-dob" :value="locale().trans.dob"/>
                     <TextInput
                         id="spouse-dob"
                         type="date"
@@ -55,7 +55,7 @@
 
 
                 <div class="mt-3">
-                    <InputLabel for="spouse-phone" value="Phone Number"/>
+                    <InputLabel for="spouse-phone" :value="locale().trans.phone"/>
                     <TextInput
                         id="spouse-phone"
                         type="tel"
@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="mt-3">
-                    <InputLabel for="spouse-address" value="Address"/>
+                    <InputLabel for="spouse-address" :value="locale().trans.address"/>
                     <TextInput
                         id="spouse-address"
                         type="text"
@@ -85,7 +85,7 @@
 
 
                 <div class="mt-3">
-                    <InputLabel for="spouse-state" value="State"/>
+                    <InputLabel for="spouse-state" :value="locale().trans.state"/>
                     <v-autocomplete
                         density="compact"
                         id="spouse-state"
@@ -104,7 +104,7 @@
                         <v-col cols="12" sm="5">
 
 
-                            <InputLabel for="spouse-city" value="City"/>
+                            <InputLabel for="spouse-city" :value="locale().trans.city"/>
                             <TextInput
                                 id="spouse-city"
                                 type="text"
@@ -118,7 +118,7 @@
                             <InputError class="mt-2" :message="spouse.errors.city"/>
                         </v-col>
                         <v-col cols="12" sm="5">
-                            <InputLabel for="spouse-street" value="Street"/>
+                            <InputLabel for="spouse-street" :value="locale().trans.street"/>
                             <TextInput
                                 id="spouse-street"
                                 type="text"
@@ -131,7 +131,7 @@
                             <InputError class="mt-2" :message="spouse.errors.street"/>
                         </v-col>
                         <v-col cols="12" sm="2">
-                            <InputLabel for="spouse-zip" value="Zip"/>
+                            <InputLabel for="spouse-zip" :value="locale().trans.zip"/>
                             <TextInput
                                 id="spouse-zip"
                                 type="text"
@@ -161,7 +161,7 @@
                 </div>
 
                 <div class="mt-3">
-                    <InputLabel for="spouse-ssn" value="Social Security Number"/>
+                    <InputLabel for="spouse-ssn" :value="locale().trans.ssn"/>
                     <TextInput
                         id="spouse-ssn"
                         type="text"
@@ -175,7 +175,7 @@
                 </div>
 
                 <div class="mt-3">
-                    <InputLabel for="spouse-license_number" value="License Number"/>
+                    <InputLabel for="spouse-license_number" :value="locale().trans.license_number"/>
                     <TextInput
                         id="spouse-license_number"
                         type="text"
@@ -189,7 +189,7 @@
                 </div>
 
                 <div class="flex items-center gap-4 mt-5">
-                    <PrimaryButton :disabled="spouse.processing">Save</PrimaryButton>
+                    <PrimaryButton :disabled="spouse.processing">{{locale().trans.save}}</PrimaryButton>
 
                     <Transition
                         enter-active-class="transition ease-in-out"
@@ -201,7 +201,7 @@
                             v-if="spouse.recentlySuccessful"
                             class="text-sm text-gray-600"
                         >
-                            Saved.
+                            {{locale().trans.saved}}.
                         </p>
                     </Transition>
                 </div>
@@ -238,7 +238,7 @@ export default {
                     dob: this.$page.props.auth.user.account?.spouse ? this.$page.props.auth.user.account.spouse.dob : "",
                     address: this.$page.props.auth.user.account?.spouse ? this.$page.props.auth.user.account.spouse.address : "",
                     phone: this.$page.props.auth.user.account?.spouse ? this.$page.props.auth.user.account.spouse.phone : "",
-                    state: this.$page.props.auth.user.account?.spouse ? this.$page.props.auth.user.account.spouse.state : "",
+                    state: this.$page.props.auth.user.account?.spouse ? this.$page.props.auth.user.account.spouse.state : "Florida",
                     city: this.$page.props.auth.user.account?.spouse ? this.$page.props.auth.user.account.spouse.city : "",
                     street: this.$page.props.auth.user.account?.spouse ? this.$page.props.auth.user.account.spouse.street : "",
                     zip: this.$page.props.auth.user.account?.spouse ? this.$page.props.auth.user.account.spouse.zip : "",

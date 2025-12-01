@@ -75,7 +75,38 @@ return [
     "quantity"=>"Cantidad",
     "expense"=>"Gasto",
     "amount"=>"Cantidad",
+    "state"=>"Estado",
+    "save"=>"Guardar",
+    "updated_at"=>"Actualizado el",
 
+
+
+    "update_spouse_information" => "Actualizar información del cónyuge",
+
+
+    "manage_income_deductions" => "Gestione sus ingresos y deducciones",
+    "deduction"=>"Deducción",
+    "current_income_deductions" => "Ingresos y deducciones actuales",
+    "add"=>"Agregar",
+    "no_finance_yet"=>"Aún no ha agregado sus registros financieros",
+    "you_want_delete_finance"=>"¿Está seguro de que desea eliminar este registro financiero?",
+    "manage_dependants"=>"Gestione dependentes",
+    "want_to_delete_dependants"=>"¿Está seguro de que desea eliminar este registro financiero?",
+    "no_dependants_yet"=>'Aún no ha agregado ningún dependiente',
+    "current_dependants" => "Dependientes actuales",
+    "months"=> "meses",
+
+
+    "street" => "Calle",
+    "zip" => "Código Postal",
+
+
+    "delete_account" => "Eliminar cuenta",
+    "delete_account_text" => "Una vez que su cuenta sea eliminada, todos sus recursos y datos serán eliminados permanentemente. Antes de eliminar su cuenta, descargue cualquier dato o información que desee conservar.",
+
+    "confirm_delete_account" => "¿Está seguro de que desea eliminar su cuenta?",
+
+    "delete_account_warning" => "Una vez que su cuenta sea eliminada, todos sus recursos y datos serán eliminados permanentemente. Por favor, ingrese su contraseña para confirmar que desea eliminar su cuenta de manera permanente.",
 
 
     "get_started_with_your_texes"=>"Regístrese para comenzar con sus impuestos",
@@ -112,7 +143,7 @@ return [
     "itin_description" => "Somos expertos en servicios de ITIN, incluyendo la solicitud y servicios de notaría. Nos aseguramos de que su Formulario W-7 del IRS se complete correctamente.",
     "call_to_action" => "Consultoría contable y fiscal <br>para usted y su negocio",
     "call_to_action_sub" => "Ya sea que sea un individuo, una empresa o una familia,<br> ofrecemos diferentes niveles de servicios entre los que puede elegir.",
-    "record_call_out" => 'Más de <span style="border-bottom: 5px solid cyan">500</span> clientes confían en nosotros <br v-if="!$vuetify.display.mobile"> para su contabilidad y sus impuestos.',
+    "record_call_out" => 'Más de <span style="border-bottom: 5px solid cyan">100</span> clientes confían en nosotros <br v-if="!$vuetify.display.mobile"> para su contabilidad y sus impuestos.',
     "need_help" => "¿Necesita ayuda con impuestos y contabilidad",
     "we_are_here_to_help" => 'Estamos aquí para asegurarnos de que usted <br> y su negocio <span style="border-bottom: 5px solid cyan">prosperen</span>',
     "here_to_help" => "Aquí en Bgomez Consultoría, estamos abiertos a individuos y empresas de todos los tamaños. Desde servicios de contabilidad para su negocio hasta la presentación de impuestos para individuos o familias, nuestros expertos en contabilidad y fiscalidad lo tienen todo cubierto.",

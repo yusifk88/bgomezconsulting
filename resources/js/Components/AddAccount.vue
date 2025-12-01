@@ -10,18 +10,17 @@
                     <v-col cols="12" sm="6" :class="{'mx-auto':onboard}">
 
                         <h1 class="text-h4 font-weight-black mt-5 text-center" v-if="onboard">Hello {{$page.props.auth.user.name}}</h1>
-                        <p class="text-center text-h5 mt-2" v-if="onboard">Complete your profile to continue</p>
-                        <p class="text-center mt-2" v-if="onboard">Set up your profile to make it easier to understand your tax needs, this
-                            include information about you and household.</p>
+                        <p class="text-center text-h5 mt-2" v-if="onboard">{{locale().trans.complete_profile}}</p>
+                        <p class="text-center mt-2" v-if="onboard">{{locale().trans.profile_continue_details}}</p>
                            <h2 id="account-info" v-if="!onboard" class="text-lg font-medium text-gray-900 mt-4">
-                               Update Your Bio Information
+                               {{locale().trans.update_your_bio}}
                            </h2>
 
 
                                 <form @submit.prevent="account.post(route('account.store'))">
 
                                     <div>
-                                        <InputLabel for="account-name" value="Name"/>
+                                        <InputLabel for="account-name" :value="locale().trans.name"/>
                                         <TextInput
                                             id="account-name"
                                             type="text"
@@ -36,14 +35,13 @@
                                     </div>
 
                                     <div class="mt-3">
-                                        <InputLabel for="occupation" value="Occupation"/>
+                                        <InputLabel for="occupation" :value="locale().trans.occupation"/>
                                         <TextInput
                                             id="occupation"
                                             type="text"
                                             class="mt-1 block w-full"
                                             v-model="account.occupation"
                                             required
-
                                             autocomplete="occupation"
                                         />
 
@@ -51,7 +49,7 @@
                                     </div>
 
                                     <div class="mt-3">
-                                        <InputLabel for="dob" value="Date Of Birth"/>
+                                        <InputLabel for="dob" :value="locale().trans.dob"/>
                                         <TextInput
                                             id="dob"
                                             type="date"
@@ -67,7 +65,7 @@
 
 
                                     <div class="mt-3">
-                                        <InputLabel for="phone" value="Phone Number"/>
+                                        <InputLabel for="phone" :value="locale().trans.phone"/>
                                         <TextInput
                                             id="phone"
                                             type="tel"
@@ -81,7 +79,7 @@
                                     </div>
 
                                     <div class="mt-3">
-                                        <InputLabel for="address" value="Address"/>
+                                        <InputLabel for="address" :value="locale().trans.address"/>
                                         <TextInput
                                             id="address"
                                             type="text"
@@ -97,7 +95,7 @@
 
 
                                     <div class="mt-3">
-                                        <InputLabel for="state" value="State"/>
+                                        <InputLabel for="state" :value="locale().trans.state"/>
                                         <v-autocomplete
                                             density="compact"
                                             id="state"
@@ -116,7 +114,7 @@
                                             <v-col cols="12" sm="5">
 
 
-                                        <InputLabel for="city" value="City"/>
+                                        <InputLabel for="city" :value="locale().trans.city"/>
                                         <TextInput
                                             id="city"
                                             type="text"
@@ -129,7 +127,7 @@
                                         <InputError class="mt-2" :message="account.errors.city"/>
                                             </v-col>
                                             <v-col cols="12" sm="5">
-                                                <InputLabel for="street" value="Street"/>
+                                                <InputLabel for="street" :value="locale().trans.street"/>
                                                 <TextInput
                                                     id="street"
                                                     type="text"
@@ -142,7 +140,7 @@
                                                 <InputError class="mt-2" :message="account.errors.street"/>
                                             </v-col>
                                             <v-col cols="12" sm="2">
-                                                <InputLabel for="zip" value="Zip"/>
+                                                <InputLabel for="zip" :value="locale().trans.zip"/>
                                                 <TextInput
                                                     id="zip"
                                                     type="text"
@@ -158,7 +156,7 @@
                                     </div>
 
                                     <div class="mt-3">
-                                        <InputLabel for="account-email" value="Email"/>
+                                        <InputLabel for="account-email" :value="locale().trans.email"/>
                                         <TextInput
                                             id="account-email"
                                             type="email"
@@ -172,7 +170,7 @@
                                     </div>
 
                                     <div class="mt-3">
-                                        <InputLabel for="ssn" value="Social Security Number"/>
+                                        <InputLabel for="ssn" :value="locale().trans.ssn"/>
                                         <TextInput
                                             id="ssn"
                                             type="text"
@@ -186,7 +184,7 @@
                                     </div>
 
                                     <div class="mt-3">
-                                        <InputLabel for="license_number" value="License Number"/>
+                                        <InputLabel for="license_number" :value="locale().trans.license_number"/>
                                         <TextInput
                                             id="license_number"
                                             type="text"
@@ -200,7 +198,7 @@
                                     </div>
 
                                     <div class="flex items-center gap-4 mt-5">
-                                        <PrimaryButton :disabled="account.processing">Save</PrimaryButton>
+                                        <PrimaryButton :disabled="account.processing">{{locale().trans.save}}</PrimaryButton>
 
                                         <Transition
                                             enter-active-class="transition ease-in-out"
@@ -212,7 +210,7 @@
                                                 v-if="account.recentlySuccessful"
                                                 class="text-sm text-gray-600"
                                             >
-                                                Saved.
+                                                {{locale().trans.saved}}
                                             </p>
                                         </Transition>
                                     </div>
@@ -237,9 +235,11 @@ import InputError from "@/Components/InputError.vue";
 import {useForm} from "@inertiajs/vue3";
 import Dropdown from "@/Components/Dropdown.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
+import {locale} from "@/utility.js";
 
 export default {
     name: "AddAccount",
+    methods: {locale},
     components: {PrimaryButton, Dropdown, InputError, InputLabel, TextInput},
     props:{
       onboard:{

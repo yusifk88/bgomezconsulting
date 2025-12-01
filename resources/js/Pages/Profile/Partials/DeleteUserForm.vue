@@ -7,6 +7,7 @@ import SecondaryButton from '@/Components/SecondaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { useForm } from '@inertiajs/vue3';
 import { nextTick, ref } from 'vue';
+import {locale} from "@/utility.js";
 
 const confirmingUserDeletion = ref(false);
 const passwordInput = ref(null);
@@ -45,15 +46,13 @@ const closeModal = () => {
 
 
             <h2 class="text-lg font-medium text-gray-900">
-                Delete Account
+                {{locale().trans.delete_account}}
             </h2>
 
             <p class="mt-1 text-sm text-gray-600">
-                Once your account is deleted, all of its resources and data will
-                be permanently deleted. Before deleting your account, please
-                download any data or information that you wish to retain.
+               {{locale().trans.delete_account_text}}
             </p>
-                <DangerButton class="mt-5 ma-2 ml-1" @click="confirmUserDeletion">Delete Account</DangerButton>
+                <DangerButton class="mt-5 ma-2 ml-1" @click="confirmUserDeletion">{{locale().trans.delete_account}}</DangerButton>
 
             </v-alert>
         </header>
@@ -64,19 +63,17 @@ const closeModal = () => {
                 <h2
                     class="text-lg font-medium text-gray-900"
                 >
-                    Are you sure you want to delete your account?
+                    {{locale().trans.confirm_delete_account}}
                 </h2>
 
                 <p class="mt-1 text-sm text-gray-600">
-                    Once your account is deleted, all of its resources and data
-                    will be permanently deleted. Please enter your password to
-                    confirm you would like to permanently delete your account.
+                   {{locale().trans.delete_account_warning}}
                 </p>
 
                 <div class="mt-6">
                     <InputLabel
                         for="password"
-                        value="Password"
+                        :value="locale().trans.password"
                         class="sr-only"
                     />
 
@@ -86,7 +83,7 @@ const closeModal = () => {
                         v-model="form.password"
                         type="password"
                         class="mt-1 block w-3/4"
-                        placeholder="Password"
+                        :placeholder="locale().trans.password"
                         @keyup.enter="deleteUser"
                     />
 
@@ -95,7 +92,7 @@ const closeModal = () => {
 
                 <div class="mt-6 flex justify-end">
                     <SecondaryButton @click="closeModal">
-                        Cancel
+                        {{locale().trans.cancel}}
                     </SecondaryButton>
 
                     <DangerButton
@@ -104,7 +101,7 @@ const closeModal = () => {
                         :disabled="form.processing"
                         @click="deleteUser"
                     >
-                        Delete Account
+                        {{locale().trans.delete_account}}
                     </DangerButton>
                 </div>
             </div>

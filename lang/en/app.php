@@ -47,23 +47,51 @@ return [
 
     "address" => "Address",
     "city" => "City",
-    "phone"=> "Phone",
-    "ssn"=> "Social Security Number",
-    "license_number"=>"License Number",
-    "dob"=>"Date of Birth",
+    "phone" => "Phone",
+    "ssn" => "Social Security Number",
+    "license_number" => "License Number",
+    "dob" => "Date of Birth",
     "spouse_information" => "Spouse Information",
-    "occupation"=>"Occupation",
-    "dependants"=>"Dependants",
-    "months_in_home"=>"Months in Home",
-    "income"=>"Income",
-    "type"=>"Type",
-    "quantity"=>"Quantity",
-    "expense"=>"Expense",
-    "amount"=>"Amount",
+    "occupation" => "Occupation",
+    "dependants" => "Dependants",
+    "months_in_home" => "Months in Home",
+    "income" => "Income",
+    "type" => "Type",
+    "quantity" => "Quantity",
+    "expense" => "Deduction",
+    "amount" => "Amount",
+
+    "update_spouse_information" => "Update spouse information",
+
+    "manage_dependants" => "Manage Dependants",
+    "submit_new" => "Submit New",
+    "no_submissions_yet" => 'Your submissions will show here. You have not submitted any documents yet. To submit your documents click on the "submit new" button',
+    "want_to_delete_dependants" => "Are you sure want to delete this dependant?",
+
+    "no_dependants_yet" => 'You have not added any dependants yet',
+    "current_dependants" => "Current Dependants",
+    "months" => "Months",
 
 
-    "submit_new"=>"Submit New",
-    "no_submissions_yet"=>'Your submissions will show here. You have not submitted any documents yet. To submit your documents click on the "submit new" button',
+    "complete_profile" => "Complete your profile to continue",
+    "profile_continue_details" => "Set up your profile to make it easier to understand your tax needs, this
+                            include information about you and household.",
+    "update_your_bio" => "Update Your Bio Information",
+
+    "street" => "Street",
+    "zip" => "Zip",
+
+    "delete_account" => "Delete Account",
+    "delete_account_text" => "Once your account is deleted, all of its resources and data will
+                be permanently deleted. Before deleting your account, please
+                download any data or information that you wish to retain.",
+
+    "confirm_delete_account" => "Are you sure you want to delete your account?",
+
+    "delete_account_warning" => "Once your account is deleted, all of its resources and data
+                    will be permanently deleted. Please enter your password to
+                    confirm you would like to permanently delete your account.",
+
 
     "recent" => "Recent",
     "submit_documents" => "Submit Documents",
@@ -73,7 +101,15 @@ return [
     "update_bio" => "Update Bio Info.",
     "update_spouse" => "Update Spouse Info.",
     "update_dependants" => "Update Dependant List",
-    "update_finance" => "Update Income & Expenses",
+    "update_finance" => "Update Income & Deductions",
+
+    "manage_income_deductions" => "Manage Income & Deductions",
+    "current_income_deductions" => "Current Income & Deductions",
+    "add" => "Add",
+    "deduction" => "Deduction",
+    "no_finance_yet" => "You have not added your finance records yet",
+    "you_want_delete_finance" => "Are you sure want to delete this financial record?",
+
 
     "get_started_with_your_texes" => "Register to get started with your texes",
     "name" => "Name",
@@ -109,7 +145,7 @@ return [
     "itin_description" => "We are experts in ITIN services including application and notary services we ensure your IRS Form W-7 is done right.",
     "call_to_action" => "Accounting & tax consulting <br>for you & your business",
     "call_to_action_sub" => "Whether you are an individual, a business or a family,<br> we offer different tiers of services that you can choose from",
-    "record_call_out" => 'Over <span style="border-bottom: 5px solid cyan">500</span> clients trust us <br v-if="!$vuetify.display.mobile"> with their bookkeeping and taxes.',
+    "record_call_out" => 'Over <span style="border-bottom: 5px solid cyan">100</span> clients trust us <br v-if="!$vuetify.display.mobile"> with their bookkeeping and taxes.',
     "need_help" => "Need Help With Tax & Bookkeeping",
     "we_are_here_to_help" => 'We are here to make sure you <br> and your business <span style="border-bottom: 5px solid cyan">thrive</span>',
     "here_to_help" => "Here at Bgomez Consulting, we are open to individuals and businesses of all sizes, from bookkeeping services for your businesses to individuals or families tax filing needs our experts in bookkeeping and tax got you covered",
@@ -146,6 +182,9 @@ return [
     "billed_per_form" => "Billed per Form",
     "billed_monthly" => "Billed Monthly",
     "billed_per_task" => "Billed per task",
+    "state"=>"State",
+    "save"=>"Save",
+    "updated_at"=>"Updated at",
 
     "resources_tools" => "Useful Resources & Tools",
     "resources_tools_text" => "Find useful resources and calculators for financial needs and answers to all your quantions",

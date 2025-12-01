@@ -4,7 +4,7 @@
         <v-col cols="12">
 
             <h2 class="text-lg font-medium text-gray-900 mt-4">
-                Manage Your Dependants
+                {{locale().trans.manage_dependants}}
             </h2>
 
 
@@ -33,7 +33,7 @@
 
                     <v-col cols="12" sm="3">
                         <div>
-                            <InputLabel for="dep-dob" value="Date of birth"/>
+                            <InputLabel for="dep-dob" :value="locale().trans.dob"/>
                             <TextInput
                                 id="dep-dob"
                                 type="date"
@@ -49,7 +49,7 @@
 
                     <v-col cols="12" sm="2">
                         <div>
-                            <InputLabel for="dep-ssn" value="Social Security Number"/>
+                            <InputLabel for="dep-ssn" :value="locale().trans.dob"/>
                             <TextInput
                                 id="dep-ssn"
                                 type="text"
@@ -65,7 +65,7 @@
 
                     <v-col cols="12" sm="2">
                         <div>
-                            <InputLabel for="dep-months_in_home" value="No of months in home"/>
+                            <InputLabel for="dep-months_in_home" :value="locale().trans.months_in_home"/>
                             <TextInput
                                 id="dep-months_in_home"
                                 type="number"
@@ -80,22 +80,22 @@
                         </div>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <primary-button class="mt-6" block>Add</primary-button>
+                        <primary-button class="mt-6" block>{{locale().trans.add}}</primary-button>
                     </v-col>
 
                 </v-row>
 
             </form>
 
-            <h4 v-if="$page.props.auth.user.account.dependants.length>0" class="mt-5 font-weight-black">Current Dependants</h4>
+            <h4 v-if="$page.props.auth.user.account.dependants.length>0" class="mt-5 font-weight-black">{{locale().trans.current_dependants}}</h4>
 
             <v-table v-if="$page.props.auth.user.account.dependants.length>0">
                 <thead>
                 <tr>
                     <th>{{ locale().trans.name }}</th>
-                    <th>Date of Birth</th>
-                    <th>Social Security Number</th>
-                    <th>Number Of Months in Home</th>
+                    <th>{{locale().trans.dob}}</th>
+                    <th>{{locale().trans.ssn}}</th>
+                    <th>{{locale().trans.months_in_home}}</th>
                     <th>--</th>
                 </tr>
                 </thead>
@@ -114,10 +114,10 @@
                     </td>
 
                     <td>
-                        {{ item.months_in_home }} {{ item.months_in_home > 1 ? "Months" : "Month" }}
+                        {{ item.months_in_home }} {{  locale().trans.months }}
                     </td>
                     <td>
-                        <danger-button @click="selectedDependant=item;confirmingDeletion=true ">Delete</danger-button>
+                        <danger-button @click="selectedDependant=item;confirmingDeletion=true ">{{locale().trans.delete}}</danger-button>
                     </td>
 
                 </tr>
@@ -126,7 +126,7 @@
 
             <v-alert v-if="$page.props.auth.user.account.dependants.length==0" class="mt-3"
                      style="border: 2px dashed grey">
-                <h4 class="text-center">You have not added any dependants yet</h4>
+                <h4 class="text-center">{{locale().trans.no_dependants_yet}}</h4>
             </v-alert>
 
         </v-col>
@@ -137,15 +137,15 @@
             <h2
                 class="text-lg font-medium text-gray-900"
             >
-                Confirm Delete
+               {{locale().trans.confirm_delete}}
             </h2>
 
             <p class="mt-1 text-sm text-gray-600">
-                Are you sure want to delete this dependant?
+                {{locale().trans.want_to_delete_dependants}}?
             </p>
             <div class="mt-6 flex justify-end">
                 <SecondaryButton @click="closeModal">
-                    Cancel
+                    {{locale().trans.cancel}}
                 </SecondaryButton>
 
                 <Link
@@ -154,7 +154,7 @@
                     method="delete"
                     @click="closeModal"
                 >
-                    Delete Dependant
+                   {{locale().trans.delete}}
                 </Link>
             </div>
         </div>

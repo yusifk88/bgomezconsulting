@@ -24,7 +24,7 @@
                 >{{t.trans.get_started}}</v-btn>
 
                 <v-btn :block="$vuetify.display.mobile"
-                       color="cyan"
+                       color="white"
                        size="x-large"
                        class="ml-md-3 mt-4"
                        variant="outlined">{{t.trans.make_appointment}}</v-btn>

@@ -21,7 +21,7 @@
                 {{ item.description }}
             </v-list-item-subtitle>
             <v-list-item-subtitle>
-                Uploaded At:{{ item.created_at }} &nbsp;&nbsp; Updated At {{ item.updated_at }}
+                {{locale().trans.uploaded_at}}:{{ formatDateTime(item.created_at)  }} &nbsp;&nbsp; {{locale().trans.updated_at}}: {{ formatDateTime(item.updated_at)  }}
             </v-list-item-subtitle>
         </v-list-item>
     </v-list>
@@ -29,11 +29,11 @@
 </template>
 <script>
 import StatusChip from "@/Components/statusChip.vue";
-import {locale} from "@/utility.js";
+import {formatDateTime, locale} from "@/utility.js";
 
 export default {
     name: "FilesList",
-    methods: {locale},
+    methods: {formatDateTime, locale},
     components: {StatusChip},
     props: {
         items: {

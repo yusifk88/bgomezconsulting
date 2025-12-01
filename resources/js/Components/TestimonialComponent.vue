@@ -21,7 +21,7 @@
                     variant="flat"
                     height="auto"
                     width="300"
-                    class="ma-2 rounded-xl"
+                    class="ma-2 rounded-xl fill-height"
                 >
                     <v-card-text>
                         <v-avatar rounded="lg">
@@ -52,53 +52,16 @@ export default {
             slide:null,
             items:[
                 {
-                    name:"Vilma Pica Piedra",
-                    text:"I want to express my heartfelt gratitude to BGomezConsulting LLC for their incredible support during a very challenging time. When I discovered that my identity had been stolen and a loan was taken out in my name, I felt helpless. Fortunately, they guided me through the entire process, from filing the necessary reports to notifying the IRS. Thanks to their expertise, I was able to file my taxes without any issues and regain control of my financial life. I highly recommend their services!",
+                    name:"Michelle Deaver",
+                    text:"BGomez Consulting ha sido un verdadero cambio positivo para todas mis necesidades fiscales. Su profesionalismo, atención al detalle y compromiso genuino con ayudar a los clientes a entender sus finanzas los distingue de cualquier otro servicio que haya utilizado. Hicieron que todo el proceso fuera sencillo, sin estrés y sumamente eficiente. Me sentí informada, apoyada y segura en cada paso.\n" +
+                        "Si buscas un equipo confiable, experto y realmente enfocado en el cliente, recomiendo ampliamente a BGomez Consulting. Van más allá de lo esperado, ¡y te preguntarás por qué no comenzaste a trabajar con ellos antes!”",
                     occupation:""
                 },
                 {
-                    name:"Vilma Pica Piedra",
-                    text:"I want to express my heartfelt gratitude to BGomezConsulting LLC for their incredible support during a very challenging time. When I discovered that my identity had been stolen and a loan was taken out in my name, I felt helpless. Fortunately, they guided me through the entire process, from filing the necessary reports to notifying the IRS. Thanks to their expertise, I was able to file my taxes without any issues and regain control of my financial life. I highly recommend their services!",
-                    occupation:""
-                },
-                {
-                    name:"Vilma Pica Piedra",
-                    text:"I want to express my heartfelt gratitude to BGomezConsulting LLC for their incredible support during a very challenging time. When I discovered that my identity had been stolen and a loan was taken out in my name, I felt helpless. Fortunately, they guided me through the entire process, from filing the necessary reports to notifying the IRS. Thanks to their expertise, I was able to file my taxes without any issues and regain control of my financial life. I highly recommend their services!",
-                    occupation:""
-                },
-                {
-                    name:"Vilma Pica Piedra",
-                    text:"I want to express my heartfelt gratitude to BGomezConsulting LLC for their incredible support during a very challenging time. When I discovered that my identity had been stolen and a loan was taken out in my name, I felt helpless. Fortunately, they guided me through the entire process, from filing the necessary reports to notifying the IRS. Thanks to their expertise, I was able to file my taxes without any issues and regain control of my financial life. I highly recommend their services!",
-                    occupation:""
-                },
-                {
-                    name:"Vilma Pica Piedra",
-                    text:"I want to express my heartfelt gratitude to BGomezConsulting LLC for their incredible support during a very challenging time. When I discovered that my identity had been stolen and a loan was taken out in my name, I felt helpless. Fortunately, they guided me through the entire process, from filing the necessary reports to notifying the IRS. Thanks to their expertise, I was able to file my taxes without any issues and regain control of my financial life. I highly recommend their services!",
-                    occupation:""
-                },
-                {
-                    name:"Vilma Pica Piedra",
-                    text:"I want to express my heartfelt gratitude to BGomezConsulting LLC for their incredible support during a very challenging time. When I discovered that my identity had been stolen and a loan was taken out in my name, I felt helpless. Fortunately, they guided me through the entire process, from filing the necessary reports to notifying the IRS. Thanks to their expertise, I was able to file my taxes without any issues and regain control of my financial life. I highly recommend their services!",
-                    occupation:""
-                },
-                {
-                    name:"Vilma Pica Piedra",
-                    text:"I want to express my heartfelt gratitude to BGomezConsulting LLC for their incredible support during a very challenging time. When I discovered that my identity had been stolen and a loan was taken out in my name, I felt helpless. Fortunately, they guided me through the entire process, from filing the necessary reports to notifying the IRS. Thanks to their expertise, I was able to file my taxes without any issues and regain control of my financial life. I highly recommend their services!",
-                    occupation:""
-                },
-                {
-                    name:"Vilma Pica Piedra",
-                    text:"I want to express my heartfelt gratitude to BGomezConsulting LLC for their incredible support during a very challenging time. When I discovered that my identity had been stolen and a loan was taken out in my name, I felt helpless. Fortunately, they guided me through the entire process, from filing the necessary reports to notifying the IRS. Thanks to their expertise, I was able to file my taxes without any issues and regain control of my financial life. I highly recommend their services!",
-                    occupation:""
-                },
-                {
-                    name:"Vilma Pica Piedra",
-                    text:"I want to express my heartfelt gratitude to BGomezConsulting LLC for their incredible support during a very challenging time. When I discovered that my identity had been stolen and a loan was taken out in my name, I felt helpless. Fortunately, they guided me through the entire process, from filing the necessary reports to notifying the IRS. Thanks to their expertise, I was able to file my taxes without any issues and regain control of my financial life. I highly recommend their services!",
-                    occupation:""
-                },
-                {
-                    name:"Vilma Pica Piedra",
-                    text:"I want to express my heartfelt gratitude to BGomezConsulting LLC for their incredible support during a very challenging time. When I discovered that my identity had been stolen and a loan was taken out in my name, I felt helpless. Fortunately, they guided me through the entire process, from filing the necessary reports to notifying the IRS. Thanks to their expertise, I was able to file my taxes without any issues and regain control of my financial life. I highly recommend their services!",
+                    name:"Christian Saravia",
+                    text:"Their support with my taxes has been exceptional. Each year, they have provided me with accurate, efficient, and trustworthy service, always taking the time to explain everything clearly and ensure that my filings are completed correctly.\n" +
+                        "\n" +
+                        "Their professionalism, attention to detail, and friendly approach have made the entire tax process easy and stress-free for me. I truly appreciate their reliability and dedication, and I highly recommend BGomezConsulting to anyone looking for knowledgeable and dependable tax services.",
                     occupation:""
                 }
             ]
