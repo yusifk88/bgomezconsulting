@@ -186,6 +186,9 @@ return [
     "save"=>"Save",
     "updated_at"=>"Updated at",
 
+    "note"=>"Note",
+    "update_note"=>"If your information such as address, dependants and earning and deductions have changed during the tax period update your profile before you continue.",
+
     "resources_tools" => "Useful Resources & Tools",
     "resources_tools_text" => "Find useful resources and calculators for financial needs and answers to all your quantions",
 

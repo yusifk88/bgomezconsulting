@@ -8,6 +8,7 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/vue3';
 import AddAccount from "@/Components/AddAccount.vue";
 import {locale} from "@/utility.js";
+import PrimaryButton from "@/Components/PrimaryButton.vue";
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -211,8 +212,20 @@ const showingNavigationDropdown = ref(false);
             </nav>
 
 
-            <!-- Page Content -->
             <main>
+
+                <v-row class="mt-5" dense v-if="!route().current('profile.edit')">
+                    <v-col cols="12" sm="9" class="mx-auto">
+                        <v-alert variant="tonal" type="info" class="ml-md-7 mr-md-7 rounded-lg">
+                            <p class="font-weight-black">{{locale().trans.note}}:</p>
+                            <p>{{locale().trans.update_note}}</p>
+                        <template v-slot:append>
+                            <primary-button :href="route('profile.edit')" class="mt-4">{{locale().trans.update_info}}</primary-button>
+                        </template>
+                        </v-alert>
+                    </v-col>
+                </v-row>
+
                 <slot v-if="$page.props.auth.user.account" />
                 <add-account :onboard="true" v-else></add-account>
             </main>

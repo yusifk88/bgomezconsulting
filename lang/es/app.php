@@ -79,6 +79,10 @@ return [
     "save"=>"Guardar",
     "updated_at"=>"Actualizado el",
 
+    "note"=>"Nota",
+    "update_note"=>"Si su información, como dirección, dependientes e ingresos y deducciones, ha cambiado durante el período fiscal, actualice su perfil antes de continuar.",
+
+
 
 
     "update_spouse_information" => "Actualizar información del cónyuge",
