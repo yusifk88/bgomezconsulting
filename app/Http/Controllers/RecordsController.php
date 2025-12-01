@@ -69,7 +69,7 @@ class RecordsController extends Controller
     {
 
         $recentSubmissions = Record::with("files")
-            ->where("account_id", auth()->user()->account->id)
+            ->where("account_id", auth()->user()?->account?->id)
             ->orderBy("created_at", "desc")
             ->limit(5)->get();
 

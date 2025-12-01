@@ -101,7 +101,7 @@
         </v-col>
 
           <v-col cols="12" sm="12" v-if="expenses.length>0">
-            <h2 class="font-weight-black text-h6 bg-grey-lighten-5">Expense:</h2>
+            <h2 class="font-weight-black text-h6 bg-grey-lighten-5">Deductions:</h2>
             <v-table>
                 <thead>
                 <tr>
