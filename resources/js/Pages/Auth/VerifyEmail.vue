@@ -3,6 +3,7 @@ import { computed } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import {locale} from "@/utility.js";
 
 const props = defineProps({
     status: {
@@ -37,18 +38,15 @@ const verificationLinkSent = computed(
                         <v-img src="https://flobaze.atl1.cdn.digitaloceanspaces.com/public/check.svg"></v-img>
                     </v-avatar>
 
-                    <p class="font-weight-black text-h4 mt-4">Let's verify it's you</p>
-            Thanks for signing up! Before getting started, could you verify your
-            email address by clicking on the link we just emailed to you? If you
-            didn't receive the email, we will gladly send you another.
+                    <p class="font-weight-black text-h4 mt-4">{{locale().trans.varify_its_you}}</p>
+           {{locale().trans.verify_title}}
         </div>
 
         <div
             class="mb-4 text-sm font-medium text-green-600"
             v-if="verificationLinkSent"
         >
-            A new verification link has been sent to the email address you
-            provided during registration.
+            {{locale().trans.verification_sent}}
         </div>
 
         <form @submit.prevent="submit">
@@ -57,7 +55,7 @@ const verificationLinkSent = computed(
                     :class="{ 'opacity-25': form.processing }"
                     :disabled="form.processing"
                 >
-                    Resend Verification Email
+                {{locale().trans.resend_email_verification}}
                 </PrimaryButton>
 
                 <Link
@@ -65,7 +63,7 @@ const verificationLinkSent = computed(
                     method="post"
                     as="button"
                     class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    >Log Out</Link
+                    >{{locale().trans.logout}}</Link
                 >
             </div>
         </form>

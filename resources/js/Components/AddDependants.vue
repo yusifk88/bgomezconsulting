@@ -49,7 +49,7 @@
 
                     <v-col cols="12" sm="2">
                         <div>
-                            <InputLabel for="dep-ssn" :value="locale().trans.dob"/>
+                            <InputLabel for="dep-ssn" :value="locale().trans.ssn"/>
                             <TextInput
                                 id="dep-ssn"
                                 type="text"

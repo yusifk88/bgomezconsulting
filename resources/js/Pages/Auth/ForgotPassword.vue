@@ -5,6 +5,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import {Head, useForm} from '@inertiajs/vue3';
+import {locale} from "@/utility.js";
 
 defineProps({
     status: {
@@ -34,12 +35,12 @@ const submit = () => {
                         <v-card-text>
 
 
-                            <p class="text-h5 font-weight-black">Reset your password</p>
+                            <p class="text-h5 font-weight-black">{{locale().trans.reset_password}}</p>
 
                             <div class="mb-4 mt-4 text-sm text-gray-600">
-                                Forgot your password? No problem. Just let us know your email
-                                address and we will email you a password reset link that will allow
-                                you to choose a new one.
+
+                                {{locale().trans.forgot_password_details}}
+
                             </div>
 
                             <div
@@ -51,7 +52,7 @@ const submit = () => {
 
                             <form @submit.prevent="submit">
                                 <div>
-                                    <InputLabel for="email" value="Email"/>
+                                    <InputLabel for="email" :value="locale().trans.email"/>
 
                                     <TextInput
                                         id="email"
@@ -71,7 +72,7 @@ const submit = () => {
                                         :class="{ 'opacity-25': form.processing }"
                                         :disabled="form.processing"
                                     >
-                                        Email Password Reset Link
+                                        {{locale().trans.email_password_reset}}
                                     </PrimaryButton>
                                 </div>
                             </form>

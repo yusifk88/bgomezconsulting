@@ -83,6 +83,26 @@ return [
                             include information about you and household.",
     "update_your_bio" => "Update Your Bio Information",
 
+    "reset_password"=>"Reset Password",
+
+
+    "email_password_reset"=>"Email Password Reset Link",
+    "forgot_password_details"=>"Forgot your password? No problem. Just let us know your email
+                                address and we will email you a password reset link that will allow
+                                you to choose a new one.",
+
+
+    "password_confirmation"=>"Confirm Password",
+
+    "varify_its_you" => "Let's verify it's you",
+    "resend_email_verification" => "Resend Verification Email",
+    "verify_title"=>" Thanks for signing up! Before getting started, could you verify your
+            email address by clicking on the link we just emailed to you? If you
+            didn't receive the email, we will gladly send you another.",
+
+    "verification_sent"=>"A new verification link has been sent to the email address you
+            provided during registration.",
+
     "street" => "Street",
     "zip" => "Zip",
 

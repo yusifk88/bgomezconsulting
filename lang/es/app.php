@@ -86,6 +86,26 @@ return [
     "dont_have_account" => "¿No tiene una cuenta?",
     "hello" => "Hola",
 
+
+
+    "varify_its_you" => "Verifiquemos que es usted",
+    "resend_email_verification" => "Reenviar correo de verificación",
+    "verify_title"=>" ¡Gracias por registrarse! Antes de comenzar, ¿podría verificar su dirección de correo electrónico haciendo clic en el enlace que le acabamos de enviar? Si no recibió el correo, con gusto le enviaremos otro.",
+
+    "verification_sent"=>"Se ha enviado un nuevo enlace de verificación a la dirección de correo electrónico que proporcionó durante el registro.",
+
+
+    "reset_password"=>"Restablecer contraseña",
+
+
+    "password_confirmation"=>"Confirmar contraseña",
+
+
+
+    "email_password_reset"=>"Enviar enlace para restablecer contraseña",
+    "forgot_password_details"=>"¿Olvidó su contraseña? No hay problema. Simplemente indíquenos su dirección de correo electrónico y le enviaremos un enlace para restablecer la contraseña que le permitirá elegir una nueva.",
+
+
     "complete_profile" => "Complete su perfil para continuar",
     "profile_continue_details" => "Configure su perfil para facilitar la comprensión de sus necesidades fiscales; esto incluye información sobre usted y su hogar.",
 
