@@ -82,7 +82,12 @@ return [
     "note"=>"Nota",
     "update_note"=>"Si su información, como dirección, dependientes e ingresos y deducciones, ha cambiado durante el período fiscal, actualice su perfil antes de continuar.",
 
+    "forgot_password" => "¿Olvidó su contraseña?",
+    "dont_have_account" => "¿No tiene una cuenta?",
+    "hello" => "Hola",
 
+    "complete_profile" => "Complete su perfil para continuar",
+    "profile_continue_details" => "Configure su perfil para facilitar la comprensión de sus necesidades fiscales; esto incluye información sobre usted y su hogar.",
 
     "update_spouse_information" => "Actualizar información del cónyuge",
 

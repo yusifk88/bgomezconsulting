@@ -9,8 +9,9 @@
                 <v-row dense>
                     <v-col cols="12" sm="6" :class="{'mx-auto':onboard}">
 
-                        <h1 class="text-h4 font-weight-black mt-5 text-center" v-if="onboard">Hello {{$page.props.auth.user.name}}</h1>
-                        <p class="text-center text-h5 mt-2" v-if="onboard">{{locale().trans.complete_profile}}</p>
+                        <h1 class="text-h4 font-weight-black mt-5 text-center" v-if="onboard">{{locale().trans.hello}} {{$page.props.auth.user.name}}</h1>
+                        <p class="text-center text-h5 mt-2" v-if="onboard">{{locale().trans.complete_profile}}
+                        </p>
                         <p class="text-center mt-2" v-if="onboard">{{locale().trans.profile_continue_details}}</p>
                            <h2 id="account-info" v-if="!onboard" class="text-lg font-medium text-gray-900 mt-4">
                                {{locale().trans.update_your_bio}}

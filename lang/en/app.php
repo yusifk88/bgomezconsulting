@@ -24,7 +24,10 @@ return [
     "saved" => "Saved",
     "documents" => "Documents",
 
+    "hello"=>"Hello",
     "add_files"=>"Add Files",
+    "forgot_password" => "Forgot Password?",
+    "dont_have_account" => "Don't have an account?",
 
     "print" => "Print",
     "edit_info" => "Edit Info.",

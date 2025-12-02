@@ -27,10 +27,12 @@ class AccountsController extends Controller
             "license_number" => 'required'
         ]);
 
-        $data = $request->all();
-        $data["user_id"] = auth()->id();
+        $user = auth()->user();
 
-        Account::updateOrCreate(["user_id", auth()->id()], $data);
+        $data = $request->all();
+        $data["user_id"] = $user->id;
+
+        Account::updateOrCreate(["user_id"=> $user->id], $data);
 
     }
 
@@ -60,7 +62,7 @@ class AccountsController extends Controller
 
         $data["account_id"] = $user->account->id;
 
-        Spouse::updateOrCreate(["account_id", $user->account->id], $data);
+        Spouse::updateOrCreate(["account_id"=> $user->account->id], $data);
 
     }
 

@@ -95,7 +95,7 @@ const submit = () => {
                     :href="route('password.request')"
                     class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
-                    Forgot your password?
+                   {{locale().trans.forgot_password}}
                 </Link>
 
 
@@ -104,7 +104,7 @@ const submit = () => {
                     :href="route('register')"
                     class="rounded-md text-sm text-gray-600 underline ml-3 mr-3 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
-                    Don't have an account?
+                   {{locale().trans.dont_have_account}}
                 </Link>
 
                 <PrimaryButton
