@@ -260,7 +260,7 @@ class RecordsController extends Controller
         $user = auth()->user();
         $records = Record::with("files")->where("account_id", $user->account->id)
             ->orderBy("created_at", "desc")
-            ->paginate(20);
+            ->paginate(50);
         return Inertia::render("Records/Index", ["records" => $records]);
 
     }

@@ -214,7 +214,7 @@ const showingNavigationDropdown = ref(false);
 
             <main>
 
-                <v-row class="mt-5" dense v-if="!route().current('profile.edit')">
+                <v-row class="mt-5 d-print-none" dense v-if="!route().current('profile.edit')">
                     <v-col cols="12" sm="9" class="mx-auto">
                         <v-alert variant="tonal" type="info" class="ml-md-7 mr-md-7 rounded-lg">
                             <p class="font-weight-black">{{locale().trans.note}}:</p>

@@ -1,6 +1,6 @@
 <template>
-    <v-chip variant="tonal" :color="states[label].color">
-        <v-icon size="small">{{ states[label].icon }}</v-icon>
+    <v-chip size="x-small" variant="tonal" :color="states[label].color">
+        <v-icon size="x-small">{{ states[label].icon }}</v-icon>
         {{ states[label].text }}
     </v-chip>
 </template>

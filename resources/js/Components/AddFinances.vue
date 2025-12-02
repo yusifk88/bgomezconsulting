@@ -192,19 +192,19 @@ export default {
                 amount: 0,
                 type: "income"
             }),
-            expenseNames: ["Medial Expenses","Real Estate Taxes","Personal Property","Mortgage interest","Job Expenses","State and Local Income Tax","General Sale Tax","Legal Expenses"],
-            incomeNames: ["w-2","1099-INT","1099-DIV","SSA-1099","1099-MSC","W-2G","1099-R","1099-B"],
+            expenseNames: ["Medial Expenses","Real Estate Taxes","Personal Property","Mortgage interest","Job Expenses","State and Local Income Tax","General Sale Tax","Legal Expenses","Other"],
+            incomeNames: ["w-2","1099-INT","1099-DIV","SSA-1099","1099-MSC","W-2G","1099-R","1099-B","Other"],
 
             confirmingDeletion:false,
             selectedRecord:null,
             types:[
                 {
                     value:"expense",
-                    title:"Deduction"
+                    title:locale().trans.expense
                 },
                 {
                     value:"income",
-                    title:"Income"
+                    title:locale().trans.income
                 },
 
 
