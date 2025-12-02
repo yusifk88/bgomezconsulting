@@ -1,6 +1,7 @@
 <template>
 
     <authenticated-layout>
+        <Head title="Submit documents"></Head>
         <div class="py-12">
 
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -108,7 +109,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import TextInput from "@/Components/TextInput.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
-import {useForm} from "@inertiajs/vue3";
+import {Head, useForm} from "@inertiajs/vue3";
 import DangerButton from "@/Components/DangerButton.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import {locale} from "@/utility.js";
@@ -116,7 +117,7 @@ import {locale} from "@/utility.js";
 export default {
     name: "Create",
     methods: {locale},
-    components: {PrimaryButton, DangerButton, InputError, InputLabel, TextInput, AuthenticatedLayout},
+    components: {Head, PrimaryButton, DangerButton, InputError, InputLabel, TextInput, AuthenticatedLayout},
     data() {
         return {
             record: useForm({

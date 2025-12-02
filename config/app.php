@@ -105,6 +105,10 @@ return [
         ),
     ],
 
+
+    'admin_email'=> env('ADMIN_EMAIL',"info@bgomezconsulting.com"),
+    "admin_url"=>env("ADMIN_URL","http://localhost"),
+
     /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver

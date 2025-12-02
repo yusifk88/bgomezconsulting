@@ -84,7 +84,6 @@ return [
 
 
 
-
     "update_spouse_information" => "Actualizar información del cónyuge",
 
 

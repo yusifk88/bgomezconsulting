@@ -24,6 +24,8 @@ return [
     "saved" => "Saved",
     "documents" => "Documents",
 
+    "add_files"=>"Add Files",
+
     "print" => "Print",
     "edit_info" => "Edit Info.",
     "delete" => "Delete",

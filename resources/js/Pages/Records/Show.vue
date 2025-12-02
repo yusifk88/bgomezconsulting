@@ -1,5 +1,6 @@
 <template>
     <authenticated-layout>
+        <Head :title="record.title"></Head>
         <div class="py-12">
 
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -282,7 +283,7 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import Modal from "@/Components/Modal.vue";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
-import {Link, useForm} from "@inertiajs/vue3";
+import {Head, Link, useForm} from "@inertiajs/vue3";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import DangerButton from "@/Components/DangerButton.vue";
 import ShowInfor from "@/Components/ShowInfor.vue";
@@ -295,6 +296,7 @@ import {formatDateTime, locale} from "@/utility.js";
 export default {
     name: "Show",
     components: {
+        Head,
         TextInput,
         InputError,
         InputLabel,

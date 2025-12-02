@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use App\Models\File;
 use App\Models\Record;
 use Illuminate\Http\Request;
@@ -51,11 +52,31 @@ class RecordsController extends Controller
 
             File::insert($savedFiles);
 
+            $message = "We have received your submission ({$record->title}). We will review and revert,
+            you will be notified if additional information is needed for processing.";
+            $link = route("records.show", $record->id);
+
+            Account::sendNotification(title: "Documents received", message: $message, email: $user->email, link: $link);
+
+
+            /**
+             * for admin only
+             */
+
+            $title="Documents from ".$user->account->name;
+
+            $message=$user->account->name." has submitted documents for processing titled: $record->title. Go to your portal to see details";
+
+            $link =  config("app.admin_url")."/records/".$record->id;
+
+            Account::sendNotification(title:$title, message: $message, email: config("app.admin_email"), link: $link);
+
         }
 
         return redirect()->route("records.show", $record);
 
     }
+
 
 
     public function create()
@@ -100,11 +121,29 @@ class RecordsController extends Controller
 
     public function destroyFile(string $id)
     {
-        $file = File::whereIn("record_id", Record::select("id")->where("account_id", auth()->user()->account->id))->findOrFail($id);
+
+        $user=auth()->user();
+
+        $file = File::with("record")->whereIn("record_id", Record::select("id")->where("account_id", $user->account->id))->findOrFail($id);
 
         Storage::disk('spaces')->delete($file->url);
 
         $file->delete();
+
+
+        /**
+         * for admin only
+         */
+
+        $title=$user->account->name." Deleted a document";
+
+        $message=$user->account->name."has deleted a document($file->name) from their record. Go to your portal to see details";
+
+        $link =  config("app.admin_url")."/records/".$file->record->id;
+
+        Account::sendNotification(title:$title, message: $message, email: config("app.admin_email"), link: $link);
+
+
         return redirect()->back();
     }
 
@@ -134,6 +173,20 @@ class RecordsController extends Controller
             ];
         }
 
+
+        /**
+         * for admin only
+         */
+
+        $title=$user->account->name." Uploaded new files";
+
+        $message=$user->account->name." added new files to their record with tittle: $record->title. Go to your portal to see details";
+
+        $link =  config("app.admin_url")."/records/".$record->id;
+
+        Account::sendNotification(title:$title, message: $message, email: config("app.admin_email"), link: $link);
+
+
         File::insert($savedFiles);
 
         return redirect()->route("records.show", $record);
@@ -154,6 +207,18 @@ class RecordsController extends Controller
         File::where("record_id", $id)->delete();
         $record->delete();
 
+        /**
+         * for admin only
+         */
+
+        $title=$user->account->name." has delete their record";
+
+        $message=$user->account->name." deleted their record with title: $record->title";
+
+        $link =  config("app.admin_url")."/records/".$record->id;
+
+        Account::sendNotification(title:$title, message: $message, email: config("app.admin_email"), link: $link);
+
         return redirect()->route("dashboard");
 
     }
@@ -172,6 +237,20 @@ class RecordsController extends Controller
         $data["bio_info"] = json_encode($user->account);
 
         $record->update($data);
+
+
+        /**
+         * for admin only
+         */
+
+        $title=$user->account->name." has updated their record";
+
+        $message=$user->account->name." made some changes to the details of their record. Go to your portal to see details";
+
+        $link =  config("app.admin_url")."/records/".$record->id;
+
+        Account::sendNotification(title:$title, message: $message, email: config("app.admin_email"), link: $link);
+
         return redirect()->back();
 
     }
