@@ -7,8 +7,42 @@
                 <div
                     class="overflow-hidden bg-white shadow-sm sm:rounded-lg pa-3"
                 >
+                    <form>
+
+                    <v-row>
+
+                        <v-col cols="12" sm="2">
+                            <label>Client</label>
+                            <v-autocomplete name="client" density="compact" placeholder="Select Client" variant="outlined"></v-autocomplete>
+                        </v-col>
+
+                        <v-col cols="12" sm="2">
+                            <label>Status</label>
+                            <v-autocomplete
+                                :items="['pending','processing','completed']"
+                                name="status" density="compact" placeholder="Select Status" variant="outlined"></v-autocomplete>
+                        </v-col>
+
+                        <v-col cols="12" sm="2">
+                            <label>Submitted From</label>
+                            <text-input name="from" type="date" model-value="" />
+                        </v-col>
+
+                        <v-col cols="12" sm="2">
+                            <label>Submitted To</label>
+                            <text-input name="to" type="date" model-value="" />
+                        </v-col>
+
+                        <v-col cols="12" sm="2">
+                            <primary-button class="mt-5">Filter</primary-button>
+                        </v-col>
+
+                    </v-row>
+                    </form>
+
                     <v-list>
-                        <v-list-item :href="route('records.show',record.id)" variant="outlined" v-for="record in records.data" :key="record.id">
+                        <v-list-item :href="route('records.show',record.id)" variant="outlined"
+                                     v-for="record in records.data" :key="record.id">
                             <template v-slot:prepend>
                                 <v-icon size="x-large">mdi-file-outline</v-icon>
                             </template>
@@ -16,13 +50,13 @@
                                 {{ record.title }}
                             </v-list-item-title>
                             <v-list-item-subtitle>
-                                 {{ record.description }}
+                                {{ record.description }}
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
-                                Submitted At: {{formatDateTime(record.created_at)}}
+                                Submitted At: {{ formatDateTime(record.created_at) }}
                             </v-list-item-subtitle>
                             <template v-slot:append>
-                                {{record.files.length}} Files &nbsp;/&nbsp;
+                                {{ record.files.length }} Files &nbsp;/&nbsp;
                                 <status-chip :label="record.status"></status-chip>
                                 <v-icon color="gre" size="small">mdi-chevron-right</v-icon>
                             </template>
@@ -55,11 +89,13 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import {Head} from "@inertiajs/vue3";
 import StatusChip from "@/Components/statusChip.vue";
 import {formatDateTime} from "@/utility.js";
+import TextInput from "@/Components/TextInput.vue";
+import PrimaryButton from "@/Components/PrimaryButton.vue";
 
 export default {
     name: "Index",
     methods: {formatDateTime},
-    components: {StatusChip, Head, AuthenticatedLayout},
+    components: {PrimaryButton, TextInput, StatusChip, Head, AuthenticatedLayout},
     props: {
         records: {
             type: Object
