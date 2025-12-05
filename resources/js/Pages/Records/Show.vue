@@ -8,6 +8,10 @@
                     class="overflow-hidden bg-white shadow-sm sm:rounded-lg mt-5"
                 >
                     <div class="p-6 text-gray-900">
+                        <v-row>
+                            <v-col cols="12" sm="9">
+
+
                         <v-toolbar class="rounded-lg d-print-none">
                             <v-toolbar-title>
                                 <status-chip :label="record.status"></status-chip>
@@ -17,7 +21,6 @@
                                 <v-btn color="#1C315A" @click="showAccount=false; print()">{{locale().trans.print}}
                                     <v-icon color="#1C315A">mdi-printer</v-icon>
                                 </v-btn>
-                                <v-btn color="#1C315A">{{locale().trans.reviews}}</v-btn>
                                 <v-menu>
 
                                     <template v-slot:activator="{props}">
@@ -156,8 +159,59 @@
                                 </v-expansion-panel-text>
                             </v-expansion-panel>
                         </v-expansion-panels>
+                            </v-col>
+                            <v-col cols="12" sm="3" class="fill-height overflow-auto bg-grey-lighten-5" >
+
+
+                                <p class="font-weight-black ma-2">Reviews</p>
+
+                                <v-timeline
+                                    size="8"
+                                    density="compact"
+                                    class="w-100 "
+                                    style="max-height: 80vh; overflow: auto"
+                                >
+                                    <v-timeline-item
+                                        v-for="review in record.reviews"
+                                        :key="review.id"
+                                        class="w-100"
+                                        density="compact"
+                                        dot-color="blue"
+                                        style="width: 100%!important;"
+
+                                    >
+                                        <v-card
+                                            variant="flat"
+                                            class="border w-100"
+
+                                            :class="{'bg-grey-lighten-5':review.type=='admin'}"
+                                        >
+
+                                            <v-card-text class="pt-2">
+                                                <p class="font-weight-black">
+                                                    {{review.title}}
+                                                </p>
+                                                {{ review.details }}
+
+                                                <p v-if="review.file" class="mt-2">
+                                                    <v-btn size="small" :href="route('records.downloadFile',review.file.id)" variant="outlined" color="green"><v-icon size="small" color="green">mdi-download-outline</v-icon>{{review.file.name}}</v-btn>
+                                                </p>
+
+                                                <small class="mt-3 text-sm d-block">{{formatDateTime(review.created_at)}}</small>
+
+                                            </v-card-text>
+                                        </v-card>
+
+                                    </v-timeline-item>
+                                </v-timeline>
+
+
+                            </v-col>
+
+                        </v-row>
 
                     </div>
+
                 </div>
             </div>
         </div>

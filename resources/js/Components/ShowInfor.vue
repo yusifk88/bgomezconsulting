@@ -55,7 +55,7 @@
 
 
     <h1 class="font-weight-black">{{locale().trans.spouse_information}}</h1>
-    <v-list>
+    <v-list v-if="account.spouse">
         <v-list-item class="border">
             <v-list-item-title>{{ account.spouse.name }}</v-list-item-title>
             <v-list-item-subtitle>{{locale().trans.name}}</v-list-item-subtitle>
@@ -100,6 +100,10 @@
         </v-list-item>
 
     </v-list>
+             <v-alert v-else>
+                 No spouse information available
+             </v-alert>
+
        </v-col>
 
        <v-col cols="12">
@@ -166,6 +170,8 @@
        </v-col>
 
 
+
+
    </v-row>
 </template>
 
@@ -188,7 +194,7 @@ export default {
             return this.account.financials.filter(item=>item.type=='income')
         } ,
         expenses(){
-            return this.account.financials.filter(item=>item.type=='expenses')
+            return this.account.financials.filter(item=>item.type=='expense')
         }
     }
 }

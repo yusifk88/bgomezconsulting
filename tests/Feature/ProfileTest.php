@@ -61,6 +61,9 @@ class ProfileTest extends TestCase
         $this->assertNotNull($user->refresh()->email_verified_at);
     }
 
+    /**
+     * @throws \JsonException
+     */
     public function test_user_can_delete_their_account(): void
     {
         $user = User::factory()->create();

@@ -3,6 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="https://flobaze.atl1.cdn.digitaloceanspaces.com/public/logo.svg">
+        <meta property="og:title" content="Bgomez Consulting" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://bgomezconsulting.com" />
+        <meta property="og:image" content="https://flobaze.atl1.cdn.digitaloceanspaces.com/public/bg-shot.webp" />
+        <meta name="twitter:title" content="Bgomez Consulting">
+        <meta name="twitter:description" content="We make taxes less taxing">
+        <meta name="twitter:image" content="https://flobaze.atl1.cdn.digitaloceanspaces.com/public/bg-shot.webp">
+        <meta name="twitter:card" content="We make taxes less taxing">
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 

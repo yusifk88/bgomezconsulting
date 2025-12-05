@@ -26,7 +26,6 @@ return new class extends Migration
             $table->string("ssn");
             $table->string("license_number");
             $table->date("dob");
-            $table->foreign("account_id")->references("id")->on("accounts");
             $table->timestamps();
         });
     }

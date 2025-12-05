@@ -101,7 +101,7 @@ class RecordsController extends Controller
 
     public function show(int $id)
     {
-        $record = Record::with("files")
+        $record = Record::with(["files","reviews"])
             ->where("account_id", auth()->user()->account->id)->findOrFail($id);
 
         return Inertia::render("Records/Show", ["record" => $record]);
@@ -111,12 +111,10 @@ class RecordsController extends Controller
     public function downloadFile(int $id)
     {
         $file = File::whereIn("record_id", Record::select("id")->where("account_id", auth()->user()->account->id))->findOrFail($id);
-        $url = Storage::disk('spaces')->temporaryUrl(
-            $file->url,
-            Carbon::now()->addMinutes(5)
-        );
 
-        return redirect($url);
+
+        return Storage::disk('spaces')->download($file->url, $file->name);
+
     }
 
     public function destroyFile(string $id)
@@ -158,6 +156,8 @@ class RecordsController extends Controller
         $user = auth()->user();
 
         $record = Record::where("account_id", $user->account->id)->findOrFail($id);
+
+
 
         $savedFiles = [];
         foreach ($request->documents as $file) {

@@ -10,17 +10,6 @@ const language = ref(locale().local);
 </script>
 
 <template>
-    <Head>
-        <link rel="icon" href="https://flobaze.atl1.cdn.digitaloceanspaces.com/public/logo.svg"></link>
-        <meta property="og:title" content="Bgomez Consulting" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://bgomezconsulting.com" />
-        <meta property="og:image" content="https://flobaze.atl1.cdn.digitaloceanspaces.com/public/bg-shot.webp" />
-        <meta name="twitter:title" content="Bgomez Consulting">
-        <meta name="twitter:description" content="We make taxes less taxing">
-        <meta name="twitter:image" content="https://flobaze.atl1.cdn.digitaloceanspaces.com/public/bg-shot.webp">
-        <meta name="twitter:card" content="We make taxes less taxing">
-    </Head>
     <v-app>
         <v-app-bar class="pl-md-14 pr-md-14">
             <template v-slot:prepend>

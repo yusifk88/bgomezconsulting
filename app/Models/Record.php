@@ -30,5 +30,10 @@ class Record extends Model
         return $this->belongsTo(Account::class);
     }
 
+    public function reviews(): HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
+
 
 }
