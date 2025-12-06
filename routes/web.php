@@ -19,7 +19,9 @@ Route::middleware('auth')->group(function () {
     Route::get("/", [RecordsController::class, "dashboard"])->name("dashboard");
     Route::get("/records", [RecordsController::class, "index"])->name("records.index");
     Route::get("/records/{id}", [RecordsController::class, "show"])->name("records.show");
+    Route::post("/records/{record_id}/send/review", [RecordsController::class, "sendReview"])->name("records.store.review");
     Route::get("/file/{id}/download",[RecordsController::class, "downloadFile"])->name("records.downloadFile");
+
 
     Route::get("/clients",[RecordsController::class, "clients"])->name("records.clients");
     Route::get("/clients/{id}",[RecordsController::class, "client"])->name("records.clients.show");

@@ -8,81 +8,253 @@
                     class="overflow-hidden bg-white shadow-sm sm:rounded-lg mt-5"
                 >
                     <div class="p-6 text-gray-900">
-                        <v-toolbar class="rounded-lg d-print-none">
-                            <v-toolbar-title>
-                                <status-chip :label="record.status"></status-chip>
-                            </v-toolbar-title>
-                            <v-spacer></v-spacer>
-                            <v-toolbar-items>
-                                <v-btn color="#1C315A" class="mr-3" @click="print">Print
-                                    <v-icon color="#1C315A">mdi-printer</v-icon>
-                                </v-btn>
-                                <v-btn color="green" variant="flat">Send A Review</v-btn>
-                            </v-toolbar-items>
-                        </v-toolbar>
-                        <v-list>
-                            <v-list-subheader>Details</v-list-subheader>
-                            <v-list-item>
-                                <v-list-item-title class="text-h4">
-                                    {{ record.title }}
-                                </v-list-item-title>
-                                <v-list-item-subtitle>Title</v-list-item-subtitle>
-                            </v-list-item>
-
-                            <v-list-item>
-                                <p class="text-wrap">
-                                    {{ record.description }}
-                                </p>
-                                <v-list-item-subtitle>Description</v-list-item-subtitle>
-                            </v-list-item>
-
-                            <v-list-item>
-                                <p class="text-wrap">
-                                    {{ formatDateTime(record.created_at) }}
-                                </p>
-                                <v-list-item-subtitle>Uploaded At</v-list-item-subtitle>
-                            </v-list-item>
+                        <v-row dense>
+                            <v-col cols="12" sm="9">
 
 
-                        </v-list>
+                                <v-toolbar class="rounded-lg d-print-none">
+                                    <v-toolbar-title>
+                                        <status-chip :label="record.status"></status-chip>
+                                    </v-toolbar-title>
+                                    <v-spacer></v-spacer>
+                                    <v-toolbar-items>
+                                        <v-btn color="#1C315A" class="mr-3" @click="print">Print
+                                            <v-icon color="#1C315A">mdi-printer</v-icon>
+                                        </v-btn>
+                                        <v-btn @click="showSendReviewDialog=true" color="green" variant="flat">Send A
+                                            Review
+                                        </v-btn>
+                                    </v-toolbar-items>
+                                </v-toolbar>
+                                <v-list>
+                                    <v-list-subheader>Details</v-list-subheader>
+                                    <v-list-item>
+                                        <v-list-item-title class="text-h4">
+                                            {{ record.title }}
+                                        </v-list-item-title>
+                                        <v-list-item-subtitle>Title</v-list-item-subtitle>
+                                    </v-list-item>
 
-                        <v-list rounded >
-                            <v-list-subheader>Files</v-list-subheader>
-                            <v-list-item
-                                :ripple="false"
-                                link
-                                class="border"
-                                v-for="file in record.files"
-                                :key="file.id">
-                                <template v-slot:prepend>
-                                    <v-icon>mdi-file-outline</v-icon>
-                                </template>
-                                <v-list-item-title>{{ file.name }}</v-list-item-title>
-                                <template v-slot:append>
+                                    <v-list-item>
+                                        <p class="text-wrap">
+                                            {{ record.description }}
+                                        </p>
+                                        <v-list-item-subtitle>Description</v-list-item-subtitle>
+                                    </v-list-item>
 
-                                    <v-btn
-                                        :href="route('records.downloadFile',file.id)"
-                                        class="d-print-none"
-                                        color="green"
-                                        size="small"
-                                        variant="text"
+                                    <v-list-item>
+                                        <p class="text-wrap">
+                                            {{ formatDateTime(record.created_at) }}
+                                        </p>
+                                        <v-list-item-subtitle>Uploaded At</v-list-item-subtitle>
+                                    </v-list-item>
+
+
+                                </v-list>
+
+                                <v-list rounded>
+                                    <v-list-subheader>Files</v-list-subheader>
+                                    <v-list-item
+                                        :ripple="false"
+                                        link
+                                        class="border"
+                                        v-for="file in record.files"
+                                        :key="file.id">
+                                        <template v-slot:prepend>
+                                            <v-icon>mdi-file-outline</v-icon>
+                                        </template>
+                                        <v-list-item-title>{{ file.name }}</v-list-item-title>
+                                        <template v-slot:append>
+
+                                            <v-btn
+                                                :href="route('records.downloadFile',file.id)"
+                                                class="d-print-none"
+                                                color="green"
+                                                size="small"
+                                                variant="text"
+                                            >
+                                                Download
+                                                <v-icon size="small">mdi-download-outline</v-icon>
+                                            </v-btn>
+
+                                        </template>
+                                    </v-list-item>
+                                </v-list>
+
+
+                                <p>Bio Information</p>
+                                <show-infor :accountInfo="record.bio_info"></show-infor>
+
+                            </v-col>
+
+
+                            <v-col cols="12" sm="3" class="fill-height overflow-auto bg-grey-lighten-5" >
+
+
+                                    <p class="font-weight-black ma-2">Reviews</p>
+
+                                <v-timeline
+                                size="8"
+                                density="compact"
+                                class="w-100 "
+                                style="max-height: 80vh; overflow: auto"
+                                >
+                                    <v-timeline-item
+                                        v-for="review in record.reviews"
+                                        :key="review.id"
+                                        class="w-100"
+                                        density="compact"
+                                        dot-color="blue"
+                                        style="width: 100%!important;"
+
                                     >
-                                        Download <v-icon size="small">mdi-download-outline</v-icon>
-                                    </v-btn>
+                                        <v-card
+                                            variant="flat"
+                                            class="border w-100"
 
-                                </template>
-                            </v-list-item>
-                        </v-list>
+                                            :class="{'bg-grey-lighten-5':review.type=='admin'}"
+                                        >
+
+                                            <v-card-text class="pt-2">
+                                                <p class="font-weight-black">
+                                                    {{review.title}}
+                                                </p>
+                                                {{ review.details }}
+
+                                                <p v-if="review.file" class="mt-2">
+                                                    <v-btn size="small" :href="route('records.downloadFile',review.file.id)" variant="outlined" color="green"><v-icon size="small" color="green">mdi-download-outline</v-icon>{{review.file.name}}</v-btn>
+                                                </p>
+
+                                                <small class="mt-3 text-sm d-block">{{formatDateTime(review.created_at)}}</small>
+
+                                            </v-card-text>
+                                        </v-card>
+
+                                    </v-timeline-item>
+                                </v-timeline>
 
 
-                        <p>Bio Information</p>
-                        <show-infor :accountInfo="record.bio_info"></show-infor>
-
-
+                            </v-col>
+                        </v-row>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <v-dialog scrim="indigo" width="500" v-model="showSendReviewDialog">
+            <v-card variant="flat" rounded="lg">
+                <v-card-title>
+                    <h2
+                        class="text-lg font-medium text-gray-900"
+                    >
+                        Send a review to the client
+                    </h2>
+
+                </v-card-title>
+
+
+                <v-card-text>
+
+                    <form @submit.prevent="reviewForm.post(route('records.store.review',record.id))">
+
+                        <div>
+
+                            <InputLabel
+                                for="title"
+                            >Title<sup class="text-red">*</sup></InputLabel>
+
+                            <TextInput
+                                id="title"
+                                ref="passwordInput"
+                                v-model="reviewForm.title"
+                                type="text"
+                                class="mt-1 block w-100"
+                                placeholder="Tittle"
+                                autofocus
+                            />
+
+                            <InputError :message="reviewForm.errors.title" class="mt-2"/>
+                        </div>
+
+                        <div class="mt-3">
+
+                            <InputLabel
+                                for="details"
+                            >Details<sup class="text-red">*</sup></InputLabel>
+
+                            <v-textarea
+                                rows="2"
+                                variant="outlined"
+                                auto-grow
+                                id="details"
+                                v-model="reviewForm.details"
+                                color="indigo"
+                                placeholder="Details of your review"
+
+                            >
+                            </v-textarea>
+
+                            <InputError :message="reviewForm.errors.details"/>
+                        </div>
+
+                        <div>
+
+                            <InputLabel
+                                for="status"
+                            >Status <sup class="text-red">*</sup></InputLabel>
+
+                            <v-select
+                                variant="outlined"
+                                color="indigo"
+                                id="status"
+                                v-model="reviewForm.status"
+                                :items="['pending','processing','completed','error']"
+                            ></v-select>
+
+                            <InputError :message="reviewForm.errors.status"/>
+                        </div>
+
+
+                        <div>
+
+                            <InputLabel
+                                for="file"
+                                value="Reference a file(optional)"
+                            />
+
+                            <v-select
+                                variant="outlined"
+                                color="indigo"
+                                id="file"
+                                v-model="reviewForm.file_id"
+                                :items="record.files"
+                                item-value="id"
+                                item-title="name"
+                            ></v-select>
+
+                            <InputError :message="reviewForm.errors.file_id"/>
+                        </div>
+
+                        <div class="mt-6 flex justify-end">
+                            <SecondaryButton @click="closeModal">
+                                Cancel
+                            </SecondaryButton>
+
+                            <primary-button
+                                class="ms-3"
+                                :class="{ 'opacity-25': reviewForm.processing }"
+                                :disabled="reviewForm.processing"
+                            >
+                                Send Review
+                            </primary-button>
+                        </div>
+                    </form>
+                </v-card-text>
+
+            </v-card>
+        </v-dialog>
+
 
     </authenticated-layout>
 </template>
@@ -124,10 +296,17 @@ export default {
             }),
             showAccount: true,
             showUpdateForm: false,
+            showSendReviewDialog: false,
 
             updateRecord: useForm({
                 title: this.record.title,
                 description: this.record.description
+            }),
+            reviewForm: useForm({
+                title: "",
+                details: "",
+                status: this.record.status,
+                file_id: null
             })
         }
     },
@@ -141,6 +320,7 @@ export default {
             this.confirmingDeletion = false;
             this.confirmingRecordDeletion = false;
             this.showUpdateForm = false;
+            this.showSendReviewDialog = false;
         }
     }
 }

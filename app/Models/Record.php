@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Record extends Model
 {
     protected $table = 'records';
-    protected $fillable = ["title", "description", "bio_info", "account_id"];
+    protected $fillable = ["title", "description", "bio_info", "account_id","status"];
 
     protected $casts = [
         "bio_info" => "array",
@@ -30,5 +30,9 @@ class Record extends Model
         return $this->belongsTo(Account::class);
     }
 
+    public function reviews(): HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
 
 }

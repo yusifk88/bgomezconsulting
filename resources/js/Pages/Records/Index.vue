@@ -7,37 +7,52 @@
                 <div
                     class="overflow-hidden bg-white shadow-sm sm:rounded-lg pa-3"
                 >
-                    <form>
+                    <form @submit.prevent="filterForm.get(route('records.index'))">
 
-                    <v-row>
+                        <v-row>
 
-                        <v-col cols="12" sm="2">
-                            <label>Client</label>
-                            <v-autocomplete name="client" density="compact" placeholder="Select Client" variant="outlined"></v-autocomplete>
-                        </v-col>
+                            <v-col cols="12" sm="2">
+                                <label for="client">Client</label>
+                                <v-autocomplete
+                                    id="client"
+                                    name="client"
+                                    density="compact"
+                                    placeholder="Select Client"
+                                    variant="outlined"
+                                    v-model="filterForm.client"
+                                    clearable
+                                    :items="clients"
+                                    item-title="name"
+                                    item-value="id"
+                                ></v-autocomplete>
+                            </v-col>
 
-                        <v-col cols="12" sm="2">
-                            <label>Status</label>
-                            <v-autocomplete
-                                :items="['pending','processing','completed']"
-                                name="status" density="compact" placeholder="Select Status" variant="outlined"></v-autocomplete>
-                        </v-col>
+                            <v-col cols="12" sm="2">
+                                <label for="status">Status</label>
+                                <v-autocomplete
+                                    clearable
+                                    v-model="filterForm.status"
+                                    id="status"
+                                    :items="['pending','processing','completed']"
+                                    name="status" density="compact" placeholder="Select Status"
+                                    variant="outlined"></v-autocomplete>
+                            </v-col>
 
-                        <v-col cols="12" sm="2">
-                            <label>Submitted From</label>
-                            <text-input name="from" type="date" model-value="" />
-                        </v-col>
+                            <v-col cols="12" sm="2">
+                                <label for="from">Submitted From</label>
+                                <text-input v-model="filterForm.from" id="from" name="from" type="date" model-value=""/>
+                            </v-col>
 
-                        <v-col cols="12" sm="2">
-                            <label>Submitted To</label>
-                            <text-input name="to" type="date" model-value="" />
-                        </v-col>
+                            <v-col cols="12" sm="2">
+                                <label for="to">Submitted To</label>
+                                <text-input v-model="filterForm.to" id="to" name="to" type="date" model-value=""/>
+                            </v-col>
 
-                        <v-col cols="12" sm="2">
-                            <primary-button class="mt-5">Filter</primary-button>
-                        </v-col>
+                            <v-col cols="12" sm="2">
+                                <primary-button class="mt-5">Filter</primary-button>
+                            </v-col>
 
-                    </v-row>
+                        </v-row>
                     </form>
 
                     <v-list>
@@ -56,6 +71,7 @@
                                 Submitted At: {{ formatDateTime(record.created_at) }}
                             </v-list-item-subtitle>
                             <template v-slot:append>
+                                From: {{record.account.name}} &nbsp;/&nbsp;
                                 {{ record.files.length }} Files &nbsp;/&nbsp;
                                 <status-chip :label="record.status"></status-chip>
                                 <v-icon color="gre" size="small">mdi-chevron-right</v-icon>
@@ -86,7 +102,7 @@
 
 <script>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
-import {Head} from "@inertiajs/vue3";
+import {Head, useForm} from "@inertiajs/vue3";
 import StatusChip from "@/Components/statusChip.vue";
 import {formatDateTime} from "@/utility.js";
 import TextInput from "@/Components/TextInput.vue";
@@ -99,6 +115,19 @@ export default {
     props: {
         records: {
             type: Object
+        },
+        clients:{
+            type:Array
+        }
+    },
+    data() {
+        return {
+            filterForm: useForm({
+                client: null,
+                status: null,
+                from: null,
+                to: null
+            })
         }
     }
 }

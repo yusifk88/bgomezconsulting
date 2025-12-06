@@ -105,6 +105,8 @@ return [
         ),
     ],
 
+    "client_url"=>env('APP_CLIENT_URL', 'http://localhost:8000'),
+
     /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
