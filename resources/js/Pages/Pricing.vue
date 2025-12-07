@@ -14,7 +14,7 @@
                         <v-card-text>
                             <p class="font-weight-black text-h6">{{locale().trans.itin}}</p>
                             <p>{{locale().trans.ira_form}}</p>
-                            <p class="font-weight-black text-h4 mt-4">{{locale().trans.starts_at}} $150.00</p>
+                            <p class="font-weight-black text-h4 mt-4">{{locale().trans.starts_at}} $250.00</p>
                             <p>{{locale().trans.billed_per_form}}</p>
 
                             <v-btn block class="mt-5" size="x-large">{{locale().trans.get_started}}</v-btn>

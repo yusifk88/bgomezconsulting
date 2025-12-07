@@ -64,6 +64,12 @@ export default {
                         "Their professionalism, attention to detail, and friendly approach have made the entire tax process easy and stress-free for me. I truly appreciate their reliability and dedication, and I highly recommend BGomezConsulting to anyone looking for knowledgeable and dependable tax services.",
                     occupation:""
                 }
+                ,
+                {
+                    name:"Fatimah Alhassan",
+                    text:"BGomez Consulting provided exceptional service with my tax filing in the past two years. They were professional, patient, and thorough in reviewing every detail to ensure everything was accurate and optimized for the best possible outcome. The process was smooth from start to finish, and they took the time to explain things clearly, making me feel confident and informed throughout. I truly appreciate their reliability and expertise, and I highly recommend BGomez Consulting to anyone looking for trustworthy and efficient tax assistance.",
+                    occupation:""
+                }
             ]
         }
     }
