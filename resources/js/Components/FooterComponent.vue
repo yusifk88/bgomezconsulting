@@ -78,7 +78,6 @@
             &nbsp;
             &nbsp;
             &nbsp;
-
             <v-avatar v-if="!$vuetify.display.mobile" size="70" color="cyan" rounded="xl">
                 <v-icon size="50" color="#1C315A">mdi-email-arrow-right-outline</v-icon>
             </v-avatar>
@@ -246,17 +245,8 @@ export default {
 
             socials: [
                 {
-                    icon: 'mdi-facebook',
-                    link: "#"
-                },
-                {
-                    icon: 'mdi-linkedin',
-                    link: "#"
-                }
-                ,
-                {
                     icon: 'mdi-instagram',
-                    link: "#"
+                    link: "https://www.instagram.com/bgomezconsulting"
                 }
             ],
 

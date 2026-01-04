@@ -211,6 +211,9 @@ return [
     "save"=>"Save",
     "updated_at"=>"Updated at",
 
+    "business_funding"=>"Business Funding and Credit Repair",
+    "business_funding_text"=>"We help individuals and businesses strengthen their credit and access the funding they need to grow.",
+
     "note"=>"Note",
     "update_note"=>"If your information such as address, dependants and earning and deductions have changed during the tax period update your profile before you continue.",
 
@@ -226,10 +229,10 @@ return [
 
 <p class='mt-3'>Over the last 4 years we have helped individuals, families and businesses do their taxes the right way, get the right amount of refunds and stay compliant with the state. This track record has create a community of over 200 happy clients in our pool which is growing rapidly month-on-month</p>",
 
-    "vision" => "Vision",
-    "mission" => "Mission",
-    "mission_text" => "We on a mission to become the go-to consultancy and resources center for tax and compliance in the United States of America",
-    "vision_text" => "To make tax feel painless and to help small businesses thrive",
+    "vision" => "Vision Statement",
+    "mission" => "Mission Statement",
+    "mission_text" => "At BGomez Consulting, our mission is to provide reliable, accurate, and personalized financial and administrative services to individuals and businesses. We are committed to helping our clients remain compliant, organized, and confident by delivering expert tax preparation, bookkeeping, ITIN application, and notary services with integrity, professionalism, and attention to detail.",
+    "vision_text" => "Our vision is to become a trusted consulting firm recognized for excellence in tax and financial services, empowering our clients to achieve financial clarity and peace of mind. We strive to build long-lasting relationships and support the growth of our community by offering dependable solutions, clear guidance, and exceptional customer service.",
     "meet_founder" => "Meet our Founder & CEO",
     "founder_info" => "Berta Gomez is the CEO of BGomezConsulting LLC, bringing over a decade of comprehensive experience in accounting and financial services. With a strong passion for helping small businesses thrive, Berta has consistently demonstrated her bookkeeping, tax preparation, and financial management expertise. <br>
 

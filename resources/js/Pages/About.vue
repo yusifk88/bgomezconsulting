@@ -42,7 +42,7 @@
             <v-row dense no-gutters>
                 <v-col cols="12" sm="6">
                     <aos-vue animation="fade-in">
-                        <v-img style="border-right: 10px solid #1C315A" src="/img/ceo.jpg"></v-img>
+                        <v-img style="border-right: 10px solid #1C315A" src="/img/ceo.jpeg"></v-img>
                     </aos-vue>
                 </v-col>
 

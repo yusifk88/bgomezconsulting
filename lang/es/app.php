@@ -209,6 +209,10 @@ return [
     "billed_monthly"=>"Facturado mensualmente",
     "billed_per_task"=>"Facturado por tarea",
 
+    "business_funding"=>"Financiamiento empresarial y reparación de crédito",
+    "business_funding_text"=>"Ayudamos a individuos y empresas a fortalecer su crédito y acceder al financiamiento que necesitan para crecer.",
+
+
     "resources_tools"=>"Recursos y herramientas útiles",
     "resources_tools_text"=>"Encuentre recursos y calculadoras útiles para sus necesidades financieras y respuestas a todas sus preguntas.",
 
@@ -220,10 +224,10 @@ return [
 <p class='mt-3'>Nuestro equipo profesional de contadores, con la misión de asegurar que las pequeñas empresas prosperen, ha ayudado a brindar claridad a más de 50 negocios al proporcionar servicios diarios de contabilidad, asesoría financiera e informes financieros que detectan tendencias y miden el progreso en sus negocios.</p>
 
 <p class='mt-3'>En los últimos 4 años, hemos ayudado a individuos, familias y empresas a realizar sus impuestos de la manera correcta, obtener la cantidad adecuada de reembolsos y mantenerse en cumplimiento con el estado. Este historial ha creado una comunidad de más de 200 clientes satisfechos, la cual sigue creciendo rápidamente mes a mes.</p>",
-    "vision"=>"Visión",
-    "mission"=>"Misión",
-    "mission_text"=>"Estamos en una misión para convertirnos en el centro de consultoría y recursos de referencia en impuestos y cumplimiento en los Estados Unidos de América.",
-    "vision_text"=>"Hacer que los impuestos se sientan sin dolor y ayudar a que las pequeñas empresas prosperen.",
+    "vision"=>"Declaración de Visión",
+    "mission"=>"Declaración de Misión",
+    "mission_text"=>"En BGomez Consulting, nuestra misión es brindar servicios financieros y administrativos confiables, precisos y personalizados a individuos y empresas. Estamos comprometidos a ayudar a nuestros clientes a mantenerse en cumplimiento con las normas, organizados y seguros, ofreciendo servicios expertos de preparación de impuestos, contabilidad, solicitud de ITIN y notaría con integridad, profesionalismo y atención al detalle.",
+    "vision_text"=>"Nuestra visión es convertirnos en una firma de consultoría de confianza, reconocida por la excelencia en servicios fiscales y financieros, empoderando a nuestros clientes para que logren claridad financiera y tranquilidad. Nos esforzamos por construir relaciones duraderas y apoyar el crecimiento de nuestra comunidad ofreciendo soluciones confiables, orientación clara y un servicio al cliente excepcional.",
     "meet_founder"=>"Conozca a nuestro Fundador y CEO",
     "founder_info"=>"Berta Gomez is the CEO of BGomezConsulting LLC, bringing over a decade of comprehensive experience in accounting and financial services. With a strong passion for helping small businesses thrive, Berta has consistently demonstrated her bookkeeping, tax preparation, and financial management expertise. <br>
 

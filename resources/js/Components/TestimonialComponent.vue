@@ -52,6 +52,19 @@ export default {
             slide:null,
             items:[
                 {
+                    name:"Melanie",
+                    text:"Ms Berta is amazing, her personality and her professionalism are everything I was looking for." +
+                        "I Will not be doing my taxes with anyone else",
+                    occupation:""
+                },
+
+                {
+                    name:"Daniel",
+                    text:"Working with Berta and the Bgomez consulting team has been a life changing experience for me and my business, I could not recommend them enough, it takes the stress away so you can focus on what really matters, growing your business.",
+                    occupation:""
+                },
+
+                {
                     name:"Michelle Deaver",
                     text:"BGomez Consulting ha sido un verdadero cambio positivo para todas mis necesidades fiscales. Su profesionalismo, atención al detalle y compromiso genuino con ayudar a los clientes a entender sus finanzas los distingue de cualquier otro servicio que haya utilizado. Hicieron que todo el proceso fuera sencillo, sin estrés y sumamente eficiente. Me sentí informada, apoyada y segura en cada paso.\n" +
                         "Si buscas un equipo confiable, experto y realmente enfocado en el cliente, recomiendo ampliamente a BGomez Consulting. Van más allá de lo esperado, ¡y te preguntarás por qué no comenzaste a trabajar con ellos antes!”",
