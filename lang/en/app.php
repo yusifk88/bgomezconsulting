@@ -166,8 +166,8 @@ return [
     "make_appointment" => "Make Appointment",
     "itin" => "ITIN Application, Notary Services",
     "tax_call_out" => 'Do your taxes the right way<br v-if="!$vuetify.display.mobile"> with <span style="border-bottom: 5px solid cyan">professional</span> support',
-    "tax_call_out_description" => "Your taxes should be done right and we are here make sure you get just that and more with a team of professionals with the sole purpose of making sure you and your business can thrive.",
-    "itin_description" => "We are experts in ITIN services including application and notary services we ensure your IRS Form W-7 is done right.",
+    "tax_call_out_description" => "Your taxes should be done right and we are here to make sure you get just that and more with a team of professionals with the sole purpose of making sure you and your business can thrive.",
+    "itin_description" => "We are experts in ITIN services including application and notary services, we ensure your IRS Form W-7 is done right.",
     "call_to_action" => "Accounting & tax consulting <br>for you & your business",
     "call_to_action_sub" => "Whether you are an individual, a business or a family,<br> we offer different tiers of services that you can choose from",
     "record_call_out" => 'Over <span style="border-bottom: 5px solid cyan">100</span> clients trust us <br v-if="!$vuetify.display.mobile"> with their bookkeeping and taxes.',
@@ -179,7 +179,7 @@ return [
     "bookkeeping_cfo" => "Bookkeeping And Virtual CFO",
     "bookkeeping_cfo_text" => "Our team of professional accountants keep track of your daily income and expense records, prepare weekly and monthly reports to give clarity to your business and offer financial advice based the outcome of the reports",
     "tax_problems" => "IRS Tax Problems",
-    "tax_problems_text" => " our team of ITIN experts will handle your IRS W-7 registration and notary, we ensure accuracy and professionalism in the process to give the best.",
+    "tax_problems_text" => "Our team of ITIN experts will handle your IRS W-7 registration and notary, we ensure accuracy and professionalism in the process to give the best.",
     "main_links" => 'Main <span style="border-bottom: 5px solid cyan">Links</span>',
 
 

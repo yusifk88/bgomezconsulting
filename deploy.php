@@ -6,6 +6,7 @@ require 'recipe/laravel.php';
 // Config
 
 set('repository', 'git@github.com:yusifk88/bgomezconsulting.git');
+set("branch", "main");
 
 add('shared_files', []);
 

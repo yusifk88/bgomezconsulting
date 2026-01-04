@@ -11,7 +11,8 @@ const language = ref(locale().local);
 
 <template>
     <v-app>
-        <v-app-bar class="pl-md-14 pr-md-14">
+        <v-system-bar color="orange" class="pr-3">13844 2nd St Fort Myers, FL 33905 &nbsp;|&nbsp; +1 (863) 618 - 7538 &nbsp; | &nbsp;  info@bgomezconsulting.com </v-system-bar>
+        <v-app-bar class="pl-md-14 pr-md-14" height="80">
             <template v-slot:prepend>
                 <application-logo></application-logo>
             </template>
