@@ -6,6 +6,7 @@ require 'recipe/laravel.php';
 // Config
 
 set('repository', 'git@github.com:yusifk88/bgomezconsulting.git');
+set("branch", "admin");
 
 add('shared_files', []);
 add('shared_dirs', ["node_modules","storage","vendor"]);
