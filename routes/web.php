@@ -16,6 +16,7 @@ use Inertia\Inertia;
 
 
 Route::middleware('auth')->group(function () {
+
     Route::get("/", [RecordsController::class, "dashboard"])->name("dashboard");
     Route::get("/records", [RecordsController::class, "index"])->name("records.index");
     Route::get("/records/{id}", [RecordsController::class, "show"])->name("records.show");
