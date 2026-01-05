@@ -260,16 +260,16 @@ const showingNavigationDropdown = ref(false);
             <span>{{locale().trans.submissions}}</span>
         </v-btn>
 
-        <v-btn
-            color="#1C315A"
-            :ripple="false"
-            :href="route('records.index')"
-            :active="route().current('records.index')"
+<!--        <v-btn-->
+<!--            color="#1C315A"-->
+<!--            :ripple="false"-->
+<!--            :href="route('records.index')"-->
+<!--            :active="route().current('records.index')"-->
 
-        >
-            <v-icon>mdi-comment-outline</v-icon>
-            <span>{{locale().trans.reviews}}</span>
-        </v-btn>
+<!--        >-->
+<!--            <v-icon>mdi-comment-outline</v-icon>-->
+<!--            <span>{{locale().trans.reviews}}</span>-->
+<!--        </v-btn>-->
 
         <v-btn
             color="#1C315A"
