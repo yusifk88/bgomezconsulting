@@ -6,11 +6,11 @@
                 BGomez {{t.trans.consulting_services}}
             </h1>
             <aos-vue animation="fade-right">
-            <p class="text-h1 mt-5 font-weight-black" v-if="t.local.toLowerCase()=='es'">
+            <p class="text-h2 mt-5 font-weight-black" v-if="t.local.toLowerCase()=='es'">
                 <span style="border-bottom:5px solid cyan ">Ahorra</span> en impuestos, gana en tranquilidad.
                 </p>
             <p class="text-h1 mt-5 font-weight-black" v-else>
-                <span style="border-bottom:5px solid cyan ">Save</span> on taxes , gain peace of mind.
+                <span style="border-bottom:5px solid cyan ">Save</span> on taxes, gain peace of mind.
                </p>
 
                 <p class="text-h5 mt-6">

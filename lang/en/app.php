@@ -167,7 +167,7 @@ return [
     "itin" => "ITIN Application, Notary Services",
     "tax_call_out" => 'Do your taxes the right way<br v-if="!$vuetify.display.mobile"> with <span style="border-bottom: 5px solid cyan">professional</span> support',
     "tax_call_out_description" => "Your taxes should be done right and we are here to assure you get that and more. Our team’s sole purpose is making sure you and your business thrive.",
-    "itin_description" => "We are experts in ITIN services including application and notary services, we ensure your IRS Form W-7 is done right.",
+    "itin_description" => "We are experts in ITIN services including application and notary services. We ensure your IRS Form W-7 is done right.",
     "call_to_action" => "Accounting & tax consulting <br>for you & your business",
     "call_to_action_sub" => "Whether you are an individual, a business or a family,<br> we offer different tiers of services that you can choose from",
     "record_call_out" => 'Over <span style="border-bottom: 5px solid cyan">100</span> clients trust us <br v-if="!$vuetify.display.mobile"> with their bookkeeping and taxes.',
