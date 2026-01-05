@@ -9,8 +9,12 @@
                     <v-toolbar-items>
                         <primary-button
                             class="mr-2"
+                            :href="route('records.new')"
+                            variant="flat"
+                            color="green"
+                        >
+                            {{locale().trans.submit_documents}}
 
-                            :href="route('records.new')" variant="flat" color="green">Submit New
                         </primary-button>
                     </v-toolbar-items>
                 </v-toolbar>
