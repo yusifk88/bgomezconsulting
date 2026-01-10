@@ -25,7 +25,10 @@
                        :href="route('register')"
                 >{{t.trans.get_started}}</v-btn>
 
-                <v-btn :block="$vuetify.display.mobile"
+                <v-btn
+                    href="https://cal.com/berta-gomez-bfereu/meetbgomezconsulting"
+                    target="_blank"
+                    :block="$vuetify.display.mobile"
                        color="white"
                        size="x-large"
                        class="ml-md-3 mt-4"

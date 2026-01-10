@@ -27,7 +27,10 @@
 
                                 <p class="text-center mt-5 mb-5 mb-md-14">
 
-                                    <v-btn :block="$vuetify.display.mobile" color="white" size="x-large" variant="outlined" class="mr-2">{{locale().trans.make_appointment}}</v-btn>
+                                    <v-btn
+                                        href="https://cal.com/berta-gomez-bfereu/meetbgomezconsulting"
+                                        target="_blank"
+                                        :block="$vuetify.display.mobile" color="white" size="x-large" variant="outlined" class="mr-2">{{locale().trans.make_appointment}}</v-btn>
                                     <v-btn :href="route('register')" :block="$vuetify.display.mobile" size="x-large" color="cyan" class="text-white ml-md-2 mt-4 mt-md-0">{{locale().trans.get_started}} <v-icon>mdi-arrow-right</v-icon></v-btn>
                                 </p>
 

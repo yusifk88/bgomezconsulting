@@ -17,7 +17,10 @@
                             <p class="font-weight-black text-h4 mt-4">{{locale().trans.starts_at}} $250.00</p>
                             <p>{{locale().trans.billed_per_form}}</p>
 
-                            <v-btn block class="mt-5" size="x-large">{{locale().trans.get_started}}</v-btn>
+                            <v-btn
+                                href="https://cal.com/berta-gomez-bfereu/meetbgomezconsulting"
+                                target="_blank"
+                                block class="mt-5" size="x-large">{{locale().trans.get_started}}</v-btn>
 
                             <v-list-item class="mt-5">
                                 <template v-slot:prepend>
@@ -80,7 +83,10 @@
                             <p class="font-weight-black text-h4 mt-4">{{locale().trans.starts_at}} $550.00</p>
                             <p>{{locale().trans.billed_monthly}}</p>
 
-                            <v-btn block class="mt-5" size="x-large">{{locale().trans.get_started}}</v-btn>
+                            <v-btn
+                                href="https://cal.com/berta-gomez-bfereu/meetbgomezconsulting"
+                                target="_blank"
+                                block class="mt-5" size="x-large">{{locale().trans.get_started}}</v-btn>
 
                             <v-list-item class="mt-5">
                                 <template v-slot:prepend>
@@ -143,7 +149,10 @@
                             <p class="font-weight-black text-h4 mt-4">{{locale().trans.starts_at}} $350</p>
                             <p>{{locale().trans.billed_per_task}}</p>
 
-                            <v-btn block class="mt-5" size="x-large">{{locale().trans.get_started}}</v-btn>
+                            <v-btn
+                                href="https://cal.com/berta-gomez-bfereu/meetbgomezconsulting"
+                                target="_blank"
+                                block class="mt-5" size="x-large">{{locale().trans.get_started}}</v-btn>
 
                             <v-list-item class="mt-5">
                                 <template v-slot:prepend>
