@@ -136,7 +136,7 @@ return [
     "you_want_delete_finance" => "Are you sure want to delete this financial record?",
 
 
-    "get_started_with_your_texes" => "Register to get started with your texes",
+    "get_started_with_your_texes" => "Register to get started with your taxes",
     "name" => "Name",
     "password" => "Password",
     "confirm" => "Confirm",
